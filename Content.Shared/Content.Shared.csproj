@@ -18,7 +18,7 @@
     <!-- <FlagShip> -->
     <ProjectReference Include="..\Content.Common\Content.Common.csproj" />
     <ProjectReference Include="../Content.FlagShip.Common/Content.FlagShip.Common.csproj" />
-    <!-- </FlagShip> huh? -->
+    <!-- </FlagShip> -->
   </ItemGroup>
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
