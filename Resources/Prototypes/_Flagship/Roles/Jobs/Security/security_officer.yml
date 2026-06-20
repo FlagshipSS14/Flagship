@@ -1,0 +1,26 @@
+- type: job
+  id: SecurityOfficer
+  name: job-name-security-officer
+  description: job-description-security-officer
+  playTimeTracker: JobSecurityOfficer
+  setPreference: true
+  startingGear: SecurityOfficerGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-sc
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+  displayWeight: 60
+  canBeAntag: false
+  accessGroups:
+  - Command
+
+- type: startingGear
+  id: SecurityOfficerGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    id: HoSPDA
+    ears: ClothingHeadsetCommandingOfficer
+    belt: ClothingBeltSecurity
+    uniform: ClothingUniformJumpsuitSec

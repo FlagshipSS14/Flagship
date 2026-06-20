@@ -1,0 +1,44 @@
+- type: job
+  id: ExecutiveOfficer
+  name: job-name-executiveofficer
+  description: job-description-executiveofficer
+  playTimeTracker: JobExecutiveOfficer
+  setPreference: true
+  canBeAntag: false
+  supervisors: job-supervisors-co
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+  displayWeight: 90
+  startingGear: ExecutiveOfficerGear
+  icon: "JobIconExecutiveOfficer"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: ExecutiveOfficerGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  storage:
+    back:
+    - Flash

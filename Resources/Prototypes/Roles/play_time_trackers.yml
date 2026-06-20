@@ -128,7 +128,7 @@
   id: JobSecurityCadet
 
 - type: playTimeTracker
-  id: JobSecurityOfficer
+  id: JobSecurityOfficerOld
 
 - type: playTimeTracker
   id: JobServiceWorker

@@ -1,0 +1,28 @@
+- type: job
+  id: HydroponicsBiologist
+  name: job-name-hydroponics-biologist
+  description: job-description-hydroponics-biologist
+  playTimeTracker: JobHydroponicsBiologist
+  setPreference: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  startingGear: HydroponicsBiologistGear
+  icon: "JobIconHydroponicsBiologist"
+  supervisors: job-supervisors-oo
+  displayWeight: 90
+  canBeAntag: true
+  accessGroups:
+  - Command
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FourTwenty
+    prototype: CannabisSeeds
+
+- type: startingGear
+  id: HydroponicsBiologistGear
+  equipment:
+    shoes: ClothingShoesColorBrown
+    id: BotanistPDA
+    ears: ClothingHeadsetService
+    belt: ClothingBeltPlantFilled

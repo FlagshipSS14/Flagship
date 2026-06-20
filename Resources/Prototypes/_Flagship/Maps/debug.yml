@@ -1,0 +1,47 @@
+- type: gameMap
+  id: FlagDev
+  mapName: FlagDev
+  mapPath: /Maps/_Flagship/Test/dev_map.yml
+  minPlayers: 0
+  stations:
+    FlagDev:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "FlagDev"
+        - type: StationJobs
+          availableJobs:
+
+          # Bridge Command
+            CommandingOfficer: [ -1, -1 ]
+            ExecutiveOfficer: [ -1, -1 ]
+            TacticalOfficer: [ -1, -1 ]
+            OperationsOfficer: [ -1, -1 ]
+            CommunicationsOfficer: [ -1, -1 ]
+            FlightControlOfficer: [ -1, -1 ]
+            BridgeEnsign: [ -1, -1 ]
+
+            # Maintenance
+            ChiefOfMaintenance: [ -1, -1 ]
+            LifeSupportSpecialist: [ -1, -1 ]
+            MaintenanceTechnician: [ -1, -1 ]
+            MaintenanceIntern: [ -1, -1 ]
+
+            # Security
+            SecurityChief: [ -1, -1 ]
+            SecurityMedic: [ -1, -1 ]
+            SecurityOfficer: [ -1, -1 ]
+            SecurityTrainee: [ -1, -1 ]
+
+            # Science
+
+            # Supply
+
+            # Medical
+
+            # Service
+            OffDutyCrew: [ -1, -1 ]
+            Bartender: [ -1, -1 ]
+            MessChef: [ -1, -1 ]
+            HydroponicsBiologist: [ -1, -1 ]
+            Custodian: [ -1, -1 ]

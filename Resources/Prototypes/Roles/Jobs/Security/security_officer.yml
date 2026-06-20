@@ -1,14 +1,14 @@
 - type: job
-  id: SecurityOfficer
+  id: SecurityOfficerOld
   name: job-name-security
   description: job-description-security
-  playTimeTracker: JobSecurityOfficer
+  playTimeTracker: JobSecurityOfficerOld
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
       time: 4h
-  startingGear: SecurityOfficerGear
-  icon: "JobIconSecurityOfficer"
+  startingGear: SecurityOfficerOldGear
+  icon: "JobIconSecurityOfficerOld"
   supervisors: job-supervisors-hos
   access:
   - Security
@@ -21,7 +21,7 @@
     implants: [ MindShieldImplant ]
 
 - type: startingGear
-  id: SecurityOfficerGear
+  id: SecurityOfficerOldGear
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetSecurity

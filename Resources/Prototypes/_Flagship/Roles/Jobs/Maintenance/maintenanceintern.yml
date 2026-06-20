@@ -1,0 +1,28 @@
+- type: job
+  id: MaintenanceIntern
+  name: job-name-maintintern
+  description: job-description-maintintern
+  playTimeTracker: JobMaintenanceIntern
+  requirements:
+#    - !type:DepartmentTimeRequirement
+#      department: Engineering
+#      time: 54000 #15 hrs
+#      inverted: true # stop playing intern if you're good at engineering!
+    - !type:OverallPlaytimeRequirement
+      time: 10800 #
+  displayWeight: 70
+  startingGear: MaintenanceInternGear
+  icon: "JobIconTechnicalAssistant"
+  supervisors: job-supervisors-com
+  canBeAntag: false
+  accessGroups:
+  - Command
+  setPreference: true
+
+- type: startingGear
+  id: MaintenanceInternGear
+  equipment:
+    shoes: ClothingShoesBootsWork
+    id: TechnicalAssistantPDA
+    ears: ClothingHeadsetEngineering
+    pocket2: BookEngineersHandbook

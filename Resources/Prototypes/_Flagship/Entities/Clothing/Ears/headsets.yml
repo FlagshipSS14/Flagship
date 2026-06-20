@@ -1,0 +1,34 @@
+# Bridge Command
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetCommandingOfficer
+  name: commanding officer headset
+  description: Headset used by commanding officers.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyMaintenance
+      - EncryptionKeyService
+      - EncryptionKeyBridgeCommand
+      - EncryptionKeyTactical
+      - EncryptionKeyOperations
+      - EncryptionKeySecurity
+      - EncryptionKeyScience
+      - EncryptionKeyMedical
+      - EncryptionKeySupply
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+
+# Security
+
+# Science
+
+# Supply
+
+# Medical
+
+# Service

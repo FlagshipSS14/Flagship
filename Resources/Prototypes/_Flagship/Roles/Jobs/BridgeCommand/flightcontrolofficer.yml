@@ -1,0 +1,44 @@
+- type: job
+  id: FlightControlOfficer
+  name: job-name-flightcontrolofficer
+  description: job-description-flightcontrolofficer
+  playTimeTracker: JobFlightControlOfficer
+  setPreference: true
+  canBeAntag: false
+  supervisors: job-supervisors-coxo
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+  displayWeight: 50
+  startingGear: FlightControlOfficerGear
+  icon: "JobIconFlightControlOfficer"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: FlightControlOfficerGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  storage:
+    back:
+    - Flash

@@ -1,0 +1,80 @@
+# Head
+- type: startingGear
+  id: MaintenanceTechnicianBeret
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: MaintenanceTechnicianHardhatYellow
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: MaintenanceTechnicianHardhatOrange
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: MaintenanceTechnicianHardhatRed
+  equipment:
+    head: ClothingHeadHatHardhatRed
+
+# Jumpsuit
+- type: loadout
+  id: MaintenanceTechnicianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineering
+
+- type: loadout
+  id: MaintenanceTechnicianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtEngineering
+
+- type: loadout
+  id: MaintenanceTechnicianHazardsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+
+# Back
+- type: loadout
+  id: MaintenanceTechnicianBackpack
+  equipment:
+    back: ClothingBackpackEngineering
+
+- type: loadout
+  id: MaintenanceTechnicianSatchel
+  equipment:
+    back: ClothingBackpackSatchelEngineering
+
+- type: loadout
+  id: MaintenanceTechnicianDuffel
+  equipment:
+    back: ClothingBackpackDuffelEngineering
+
+# OuterClothing
+- type: loadout
+  id: MaintenanceTechnicianOuterVest
+  equipment:
+    outerClothing: ClothingOuterVestHazard
+
+- type: loadout
+  id: MaintenanceTechnicianWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterEngi
+
+# Shoes
+- type: loadout
+  id: MaintenanceTechnicianWorkBoots
+  equipment:
+    shoes: ClothingShoesBootsWork
+
+- type: loadout
+  id: MaintenanceTechnicianWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterEngi
+
+# ID
+- type: loadout
+  id: MaintenanceTechnicianPDA
+  equipment:
+    id: EngineerPDA

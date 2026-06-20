@@ -1,0 +1,19 @@
+- type: job
+  id: OffDutyCrew
+  name: job-name-offduty-crew
+  description: job-description-offduty-crew
+  playTimeTracker: JobOffDutyCrew
+  setPreference: true
+  startingGear: OffDutyCrewGear
+  supervisors: job-supervisors-oo
+  icon: "JobIconPassenger"
+  displayWeight: 10
+  canBeAntag: true
+  accessGroups:
+  - Command
+
+- type: startingGear
+  id: OffDutyCrewGear
+  equipment:
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey

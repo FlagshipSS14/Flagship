@@ -219,7 +219,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSecurityOfficer
+  id: JobIconSecurityOfficerOld
   icon:
     sprite: *icon-rsi
     state: SecurityOfficer

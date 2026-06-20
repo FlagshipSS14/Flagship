@@ -1,0 +1,44 @@
+- type: job
+  id: BridgeEnsign
+  name: job-name-bridgeensign
+  description: job-description-bridgeensign
+  playTimeTracker: JobBridgeEnsign
+  setPreference: true
+  canBeAntag: false
+  supervisors: job-supervisors-bs
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+
+  displayWeight: 40
+  startingGear: BridgeEnsignGear
+  icon: "JobIconBridgeEnsign"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: BridgeEnsignGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    id: CaptainPDA
+    ears: ClothingHeadsetAltCommand
+  storage:
+    back:
+    - Flash

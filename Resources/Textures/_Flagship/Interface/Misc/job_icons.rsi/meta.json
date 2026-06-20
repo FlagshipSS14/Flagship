@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Color swapped from existing sprites content by the original Space Station 14 developpers at https://github.com/space-wizards/space-station-14",
+
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "CommandingOfficer"
+        },
+        {
+            "name": "ExecutiveOfficer"
+        },
+        {
+            "name": "TacticalOfficer"
+        },
+        {
+            "name": "OperationsOfficer"
+        },
+        {
+            "name": "CommunicationsOfficer"
+        },
+        {
+            "name": "FlightControlOfficer"
+        },
+        {
+            "name": "BridgeEnsign"
+        }
+    ]
+}

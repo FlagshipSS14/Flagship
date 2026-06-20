@@ -1,0 +1,24 @@
+- type: job
+  id: MessChef
+  name: job-name-mess-chef
+  description: job-description-mess-chef
+  playTimeTracker: JobMessChef
+  setPreference: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  startingGear: MessChefGear
+  icon: "JobIconMessChef"
+  supervisors: job-supervisors-oo
+  displayWeight: 80
+  canBeAntag: true
+  accessGroups:
+  - Command
+
+- type: startingGear
+  id: MessChefGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    id: ChefPDA
+    ears: ClothingHeadsetService
+    belt: ClothingBeltChefFilled
