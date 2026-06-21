@@ -41,6 +41,6 @@
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesCaptain
     back: ClothingBackpackSatchelLeather
-    id: CaptainPDA
+    id: CommandingOfficerPDA
     ears: ClothingHeadsetCommandingOfficer
     belt: ClothingBeltHolster
