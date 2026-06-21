@@ -23,6 +23,7 @@
   - Captain
   accessGroups:
   - Command
+  - AllAccess
   special:
   - !type:AddImplantSpecial
      implants: [ MindShieldImplant ]
@@ -33,11 +34,15 @@
 - type: startingGear
   id: TacticalOfficerGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesCaptain
-    id: CaptainPDA
-    ears: ClothingHeadsetCommandingOfficer
+    back: ClothingBackpackSatchelLeather
+    belt: ClothingBeltHolster
+    id: TacticalOfficerPDA
+    ears: ClothingHeadsetAltTacticalOfficer
   storage:
     back:
     - Flash

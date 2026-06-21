@@ -33,11 +33,15 @@
 - type: startingGear
   id: OperationsOfficerGear
   equipment:
-    shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesCaptain
-    id: CaptainPDA
-    ears: ClothingHeadsetCommandingOfficer
+    back: ClothingBackpackSatchelLeather
+    belt: ClothingBeltHolster
+    id: OperationsOfficerPDA
+    ears: ClothingHeadsetAltOperationsOfficer
   storage:
     back:
     - Flash

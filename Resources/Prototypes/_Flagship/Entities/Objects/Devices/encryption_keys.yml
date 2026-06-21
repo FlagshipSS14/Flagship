@@ -49,12 +49,12 @@
     - Common
     defaultChannel: BridgeCommand
   - type: Item
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
   - type: Sprite
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
     layers:
-    - state: crypt_gold
-    - state: nano_label
+    - state: crypt_darkblue
+    - state: bridgecommand_label
 
 - type: entity
   parent: EncryptionKey
@@ -180,22 +180,23 @@
   - type: EncryptionKey
     channels:
     - BridgeCommand
-    - Maintenance
-    - Medical
     - Tactical
     - Operations
-    - Service
-    - Science
+    - Security
     - Supply
+    - Maintenance
+    - Medical
+    - Science
+    - Service
     - Common
     defaultChannel: BridgeCommand
   - type: Item
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
   - type: Sprite
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
     layers:
-    - state: crypt_gold
-    - state: nano_label
+    - state: crypt_darkblue
+    - state: commandingofficer_label
 
 - type: entity
   parent: EncryptionKey
@@ -206,19 +207,93 @@
   - type: EncryptionKey
     channels:
     - BridgeCommand
-    - Maintenance
-    - Medical
     - Tactical
     - Operations
-    - Service
-    - Science
+    - Security
     - Supply
+    - Maintenance
+    - Medical
+    - Science
+    - Service
     - Common
     defaultChannel: BridgeCommand
   - type: Item
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
   - type: Sprite
-    sprite: Objects/Devices/encryption_keys.rsi
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
     layers:
-    - state: crypt_gold
-    - state: nano_label
+    - state: crypt_darkblue
+    - state: executiveofficer_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyTacticalOfficer
+  name: Tactical Officer's encryption key
+  description: An encryption key used only by the Tactical Officer of the ship.
+  components:
+  - type: EncryptionKey
+    channels:
+    - BridgeCommand
+    - Tactical
+    - Security
+    - Supply
+    - Maintenance
+    - Common
+    defaultChannel: BridgeCommand
+  - type: Item
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_darkblue
+    - state: tacticalofficer_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyOperationsOfficer
+  name: Operations Officer's encryption key
+  description: An encryption key used only by the Operations Officer of the ship.
+  components:
+  - type: EncryptionKey
+    channels:
+    - BridgeCommand
+    - Operations
+    - Medical
+    - Science
+    - Service
+    - Common
+    defaultChannel: BridgeCommand
+  - type: Item
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_darkblue
+    - state: operationsofficer_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyCommunicationsOfficer
+  name: Communications Officer's encryption key
+  description: An encryption key used only by the Communications Officer of the ship.
+  components:
+  - type: EncryptionKey
+    channels:
+    - BridgeCommand
+    - Tactical
+    - Operations
+    - Security
+    - Supply
+    - Maintenance
+    - Medical
+    - Science
+    - Service
+    - Common
+    defaultChannel: BridgeCommand
+  - type: Item
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _Flagship/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_darkblue
+    - state: communicationsofficer_label
