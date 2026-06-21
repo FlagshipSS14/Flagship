@@ -39,8 +39,16 @@
   <Project Path="Content.Shared/Content.Shared.csproj" />
   <Project Path="Content.Tests/Content.Tests.csproj" />
   <Project Path="Content.Tools/Content.Tools.csproj" />
+  <!-- <FlagShip> -->
+  <Project Path="Content.FlagShip.Server/Content.FlagShip.Server.csproj" />
+  <Project Path="Content.FlagShip.Shared/Content.FlagShip.Shared.csproj" />
+  <Project Path="Content.FlagShip.Client/Content.FlagShip.Client.csproj" />
+  <Project Path="Content.FlagShip.Common/Content.FlagShip.Common.csproj" />
+  <Project Path="Content.Common/Content.Common.csproj" />
+  <!-- </FlagShip> -->
   <Project Path="Content.YAMLLinter/Content.YAMLLinter.csproj" />
   <Project Path="Pow3r/Pow3r.csproj" />
+  <Folder Name="/RobustToolbox/.github/" />
   <Folder Name="/RobustToolbox/.github/workflows/">
     <File Path="RobustToolbox/.github/workflows/benchmarks.yml" />
     <File Path="RobustToolbox/.github/workflows/build-all-configurations.yml" />

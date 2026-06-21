@@ -6,6 +6,7 @@
   <Import Project="../MSBuild/Content.props" />
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
+    <PackageReference Include="System.Numerics.Tensors" />
     <PackageReference Include="YamlDotNet" />
   </ItemGroup>
 
@@ -14,6 +15,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Content.Shared.Database\Content.Shared.Database.csproj" />
+    <!-- <FlagShip> -->
+    <ProjectReference Include="..\Content.Common\Content.Common.csproj" />
+    <ProjectReference Include="../Content.FlagShip.Common/Content.FlagShip.Common.csproj" />
+    <!-- </FlagShip> -->
   </ItemGroup>
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
