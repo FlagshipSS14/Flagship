@@ -1,0 +1,38 @@
+# Head
+- type: loadout
+  id: CustodianHead
+  equipment:
+    head: ClothingHeadHatPurplesoft
+
+# Jumpsuit
+- type: loadout
+  id: CustodianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJanitor
+
+- type: loadout
+  id: CustodianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanitor
+
+# Gloves
+- type: loadout
+  id: CustodianRubberGloves
+  equipment:
+    gloves: ClothingHandsGlovesJanitor
+
+- type: loadout
+  id: CustodianOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+
+- type: loadout
+  id: CustodianPurpleGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorPurple
+
+# Outer clothing
+- type: loadout
+  id: CustodianWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterJani

@@ -1,0 +1,21 @@
+- type: job
+  id: MaintenanceTechnician
+  name: job-name-mainttech
+  description: job-description-mainttech
+  playTimeTracker: JobMaintenanceTechnician
+  setPreference: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  displayWeight: 80
+  startingGear: MaintenanceTechnicianGear
+  icon: "JobIconStationEngineer"
+  supervisors: job-supervisors-com
+  accessGroups:
+  - Command
+
+- type: startingGear
+  id: MaintenanceTechnicianGear
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+    ears: ClothingHeadsetEngineering

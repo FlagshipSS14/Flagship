@@ -1,0 +1,159 @@
+# Bridge Command
+- type: entity
+  id: SpawnPointCommandingOfficer
+  parent: SpawnPointJobBase
+  name: Commanding Officer
+  components:
+  - type: SpawnPoint
+    job_id: CommandingOfficer
+
+- type: entity
+  id: SpawnPointExecutiveOfficer
+  parent: SpawnPointJobBase
+  name: Executive Officer
+  components:
+  - type: SpawnPoint
+    job_id: ExecutiveOfficer
+
+- type: entity
+  id: SpawnPointTacticalOfficer
+  parent: SpawnPointJobBase
+  name: Tactical Officer
+  components:
+  - type: SpawnPoint
+    job_id: TacticalOfficer
+
+- type: entity
+  id: SpawnPointOperationsOfficer
+  parent: SpawnPointJobBase
+  name: Operations Officer
+  components:
+  - type: SpawnPoint
+    job_id: OperationsOfficer
+
+- type: entity
+  id: SpawnPointCommunicationsOfficer
+  parent: SpawnPointJobBase
+  name: Communications Officer
+  components:
+  - type: SpawnPoint
+    job_id: CommunicationsOfficer
+
+- type: entity
+  id: SpawnPointFlightControlOfficer
+  parent: SpawnPointJobBase
+  name: Flight Control Officer
+  components:
+  - type: SpawnPoint
+    job_id: FlightControlOfficer
+
+- type: entity
+  id: SpawnPointBridgeEnsign
+  parent: SpawnPointJobBase
+  name: Bridge Ensign
+  components:
+  - type: SpawnPoint
+    job_id: BridgeEnsign
+
+#Maintenance
+- type: entity
+  id: SpawnPointChiefOfMaintenance
+  parent: SpawnPointJobBase
+  name: Chief of Maintenance
+  components:
+  - type: SpawnPoint
+    job_id: ChiefOfMaintenance
+
+- type: entity
+  id: SpawnPointLifeSupportSpecialist
+  parent: SpawnPointJobBase
+  name: Life Support Specialist
+  components:
+  - type: SpawnPoint
+    job_id: LifeSupportSpecialist
+  - type: Sprite
+
+- type: entity
+  id: SpawnPointMaintenanceTechnician
+  parent: SpawnPointJobBase
+  name: Maintenance Technician
+  components:
+  - type: SpawnPoint
+    job_id: MaintenanceTechnician
+
+- type: entity
+  id: SpawnPointMaintenanceIntern
+  parent: SpawnPointJobBase
+  name: Maintenance Intern
+  components:
+  - type: SpawnPoint
+    job_id: MaintenanceIntern
+
+# Security
+- type: entity
+  id: SpawnPointSecurityChief
+  parent: SpawnPointJobBase
+  name: Security Chief
+  components:
+  - type: SpawnPoint
+    job_id: SecurityChief
+
+- type: entity
+  id: SpawnPointSecurityMedic
+  parent: SpawnPointJobBase
+  name: Security Medic
+  components:
+  - type: SpawnPoint
+    job_id: SecurityMedic
+
+- type: entity
+  id: SpawnPointSecurityOfficer
+  parent: SpawnPointJobBase
+  name: Security Officer
+  components:
+  - type: SpawnPoint
+    job_id: SecurityOfficer
+
+- type: entity
+  id: SpawnPointSecurityTrainee
+  parent: SpawnPointJobBase
+  name: Security Trainee
+  components:
+  - type: SpawnPoint
+    job_id: SecurityTrainee
+
+# Science
+
+# Supply
+
+# Medical
+
+
+# Service
+- type: entity
+  id: SpawnPointCustodian
+  parent: SpawnPointJanitor
+  components:
+  - type: SpawnPoint
+    job_id: Custodian
+
+- type: entity
+  id: SpawnPointMessChef
+  parent: SpawnPointChef
+  components:
+  - type: SpawnPoint
+    job_id: MessChef
+
+- type: entity
+  id: SpawnPointHydroponicsBiologist
+  parent: SpawnPointBotanist
+  components:
+  - type: SpawnPoint
+    job_id: HydroponicsBiologist
+
+- type: entity
+  id: SpawnPointOffDutyCrew
+  parent: SpawnPointPassenger
+  components:
+  - type: SpawnPoint
+    job_id: OffDutyCrew

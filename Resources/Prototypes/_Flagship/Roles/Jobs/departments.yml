@@ -1,0 +1,68 @@
+- type: department
+  id: BridgeCommand
+  name: department-BridgeCommand
+  description: department-BridgeCommand-description
+  color: "#2b72ee"
+  weight: 200
+  primary: false
+  roles:
+  - CommandingOfficer
+  - ExecutiveOfficer
+  - TacticalOfficer
+  - OperationsOfficer
+  - CommunicationsOfficer
+  - FlightControlOfficer
+  - BridgeEnsign
+
+- type: department
+  id: Maintenance
+  name: department-Maintenance
+  description: department-Maintenance-description
+  color: "#EFB341"
+  weight: 120
+  primary: false
+  roles:
+  - ChiefOfMaintenance
+  - MaintenanceTechnician
+  - LifeSupportSpecialist
+  - MaintenanceIntern
+
+- type: department
+  id: Security
+  name: department-Security
+  description: department-Security-description
+  color: "#2b72ee"
+  weight: 180
+  primary: false
+  roles:
+  - SecurityChief
+  - SecurityMedic
+  - SecurityOfficer
+  - SecurityTrainee
+
+- type: department
+  id: Science
+  name: department-Science
+  description: department-Science-description
+  color: "#cd7ccd"
+  weight: 160
+  primary: false
+  roles:
+  - ScienceSupervisor
+  - Roboticist
+  - Scientist
+  - ResearchAssistant
+
+- type: department
+  id: Service
+  name: department-Service
+  description: department-Service-description
+  color: "#c1ff72"
+  weight: 0
+  primary: true
+  roles:
+  - Bartender
+  - HydroponicsBiologist
+  - MessChef
+  - Custodian
+  - OffDutyCrew

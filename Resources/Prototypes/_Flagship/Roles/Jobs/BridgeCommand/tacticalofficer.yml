@@ -1,0 +1,43 @@
+- type: job
+  id: TacticalOfficer
+  name: job-name-tacticalofficer
+  description: job-description-tacticalofficer
+  playTimeTracker: JobTacticalOfficer
+  setPreference: true # Frontier
+  supervisors: job-supervisors-coxo
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+  displayWeight: 80
+  startingGear: TacticalOfficerGear
+  icon: "JobIconTacticalOfficer"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: TacticalOfficerGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    id: CaptainPDA
+    ears: ClothingHeadsetCommandingOfficer
+  storage:
+    back:
+    - Flash

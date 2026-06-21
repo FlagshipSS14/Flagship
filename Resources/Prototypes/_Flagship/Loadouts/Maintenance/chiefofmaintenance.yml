@@ -1,0 +1,61 @@
+# Jumpsuit
+- type: loadout
+  id: ChiefOfMaintenanceJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineer
+
+- type: loadout
+  id: ChiefOfMaintenanceJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineer
+
+- type: loadout
+  id: ChiefOfMaintenanceTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
+
+- type: loadout
+  id: ChiefOfMaintenanceTurtleneckSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineerTurtle
+
+# Head
+- type: loadout
+  id: ChiefOfMaintenanceHead
+  equipment:
+    head: ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: ChiefOfMaintenanceBeret
+  startingGear: EngineeringBeret
+
+# Neck
+- type: loadout
+  id: ChiefOfMaintenanceCloak
+  equipment:
+    neck: ClothingNeckCloakCe
+
+- type: loadout
+  id: ChiefOfMaintenanceMantle
+  equipment:
+    neck: ClothingNeckMantleCE
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCE
+
+- type: startingGear
+  id: ChiefOfMaintenanceMantle
+  equipment:
+    neck: ClothingNeckMantleCE
+
+# OuterClothing
+- type: loadout
+  id: ChiefOfMaintenanceWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCE
+
+# Shoes
+- type: loadout
+  id: ChiefOfMaintenanceBrownShoes
+  equipment:
+    shoes: ClothingShoesColorBrown

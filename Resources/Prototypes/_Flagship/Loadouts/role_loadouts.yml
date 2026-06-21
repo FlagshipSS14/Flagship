@@ -1,0 +1,23 @@
+# Bridge Command
+- type: roleLoadout
+  id: JobCommandingOfficer
+  groups:
+  - CaptainHead
+  - CaptainJumpsuit
+  - CaptainBackpack
+  - CaptainOuterClothing
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Maintenance
+- type: roleLoadout
+  id: JobChiefOfMaintenance
+  groups:
+  - ChiefOfMaintenanceHead
+  - ChiefOfMaintenanceJumpsuit
+  - StationEngineerBackpack
+  - ChiefOfMaintenanceOuterClothing
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

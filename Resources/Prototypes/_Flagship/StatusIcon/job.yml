@@ -1,0 +1,162 @@
+# Bridge Command
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCommandingOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: CommandingOfficer
+  jobName: job-name-commandingofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconExecutiveOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ExecutiveOfficer
+  jobName: job-name-executiveofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTacticalOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: TacticalOfficer
+  jobName: job-name-tacticalofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOperationsOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: OperationsOfficer
+  jobName: job-name-operationsofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCommunicationsOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: CommunicationsOfficer
+  jobName: job-name-communicationsofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconFlightControlOfficer
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: FlightControlOfficer
+  jobName: job-name-flightcontrolofficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBridgeEnsign
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: BridgeEnsign
+  jobName: job-name-bridgeensign
+
+# Maintenance
+
+# Security
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityChief
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: HeadOfSecurity
+  jobName: job-name-security-chief
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityMedic
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Brigmedic
+  jobName: job-name-security-medic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityOfficer
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SecurityOfficer
+  jobName: job-name-security-officer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityTrainee
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SecurityCadet
+  jobName: job-name-security-trainee
+
+# Science
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconScienceSupervisor
+  icon:
+    sprite: *icon-rsi
+    state: ResearchDirector
+  jobName: job-name-science-supervisor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconRoboticist
+  icon:
+    sprite: *icon-rsi
+    state: Roboticist
+  jobName: job-name-roboticist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconScientist
+  icon:
+    sprite: *icon-rsi
+    state: Scientist
+  jobName: job-name-scientist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconResearchAssistant
+  icon:
+    sprite: *icon-rsi
+    state: ResearchAssistant
+  jobName: job-name-research-assistant
+
+
+# Supply
+
+# Medical
+
+# Service
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMessChef
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Chef
+  jobName: job-name-mess-chef
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCustodian
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Janitor
+  jobName: job-name-custodian
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHydroponicsBiologist
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Botanist
+  jobName: job-name-hydroponics-biologist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOffDutyCrew
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Passenger
+  jobName: job-name-offduty-crew

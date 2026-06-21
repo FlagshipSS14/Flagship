@@ -1,0 +1,46 @@
+- type: job
+  id: CommandingOfficer
+  name: job-name-commandingofficer
+  description: job-description-commandingofficer
+  playTimeTracker: JobCommandingOfficer
+  setPreference: true
+  supervisors: job-supervisors-hc
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+  displayWeight: 100
+  startingGear: CommandingOfficerGear
+  icon: "JobIconCommandingOfficer"
+  joinNotifyCrew: true
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: CommandingOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCommand
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesCaptain
+    back: ClothingBackpackSatchelLeather
+    id: CaptainPDA
+    ears: ClothingHeadsetCommandingOfficer
+    belt: ClothingBeltHolster

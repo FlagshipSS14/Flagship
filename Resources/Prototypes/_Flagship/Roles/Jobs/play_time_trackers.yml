@@ -1,0 +1,81 @@
+# Bridge Command
+- type: playTimeTracker
+  id: JobCommandingOfficer
+
+- type: playTimeTracker
+  id: JobExecutiveOfficer
+
+- type: playTimeTracker
+  id: JobTacticalOfficer
+
+- type: playTimeTracker
+  id: JobOperationsOfficer
+
+- type: playTimeTracker
+  id: JobCommunicationsOfficer
+
+- type: playTimeTracker
+  id: JobFlightControlOfficer
+
+- type: playTimeTracker
+  id: JobBridgeEnsign
+
+# Maintenance
+- type: playTimeTracker
+  id: JobChiefOfMaintenance
+
+- type: playTimeTracker
+  id: JobMaintenanceTechnician
+
+- type: playTimeTracker
+  id: JobLifeSupportSpecialist
+
+- type: playTimeTracker
+  id: JobMaintenanceIntern
+
+# Security
+- type: playTimeTracker
+  id: JobSecurityChief
+
+- type: playTimeTracker
+  id: JobSecurityMedic
+
+- type: playTimeTracker
+  id: JobSecurityOfficer
+
+- type: playTimeTracker
+  id: JobSecurityTrainee
+
+# Science
+- type: playTimeTracker
+  id: JobScienceSupervisor
+
+- type: playTimeTracker
+  id: JobRoboticist
+
+- type: playTimeTracker
+  id: JobScientist
+
+- type: playTimeTracker
+  id: JobResearchAssistant
+
+# Supply
+
+
+# Medical
+
+
+# Service
+- type: playTimeTracker
+  id: JobOffDutyCrew
+
+- type: playTimeTracker
+  id: JobMessChef
+
+- type: playTimeTracker
+  id: JobCustodian
+
+- type: playTimeTracker
+  id: JobHydroponicsBiologist
+
+

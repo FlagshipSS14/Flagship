@@ -1,0 +1,18 @@
+- type: entity
+  parent: TelecomServer
+  id: FlagTelecomServerFilled
+  suffix: Filled All
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyMaintenance
+      - EncryptionKeyService
+      - EncryptionKeyBridgeCommand
+      - EncryptionKeyTactical
+      - EncryptionKeyOperations
+      - EncryptionKeySecurity
+      - EncryptionKeyScience
+      - EncryptionKeyMedical
+      - EncryptionKeySupply

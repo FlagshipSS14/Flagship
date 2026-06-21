@@ -1,0 +1,170 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyMaintenance
+  name: Maintenance encryption key
+  description: An encryption key for the maintenance communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - Maintenance
+    defaultChannel: Maintenance
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: eng_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyService
+  name: Service encryption key
+  description: An encryption key for the service communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Service
+    - Common
+    defaultChannel: Service
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: service_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyBridgeCommand
+  name: Bridge Command encryption key
+  description: An encryption key for the bridge command communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - BridgeCommand
+    - Common
+    defaultChannel: BridgeCommand
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gold
+    - state: nano_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyTactical
+  name: Tactical encryption key
+  description: An encryption key for the tactical communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Tactical
+    - Common
+    defaultChannel: Tactical
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gold
+    - state: eng_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyOperations
+  name: Operations encryption key
+  description: An encryption key for the operations communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Operations
+    - Common
+    defaultChannel: Operations
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gold
+    - state: service_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySecurity
+  name: Security encryption key
+  description: An encryption key for the security communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Security
+    - Common
+    defaultChannel: Security
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: sec_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyScience
+  name: Science encryption key
+  description: An encryption key for the science communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Science
+    - Common
+    defaultChannel: Science
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: sci_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySupply
+  name: Supply encryption key
+  description: An encryption key for the supplies communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Supply
+    - Common
+    defaultChannel: Supply
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: cargo_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyMedical
+  name: Medical encryption key
+  description: An encryption key for the medical communications channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Medical
+    - Common
+    defaultChannel: Medical
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: med_label
