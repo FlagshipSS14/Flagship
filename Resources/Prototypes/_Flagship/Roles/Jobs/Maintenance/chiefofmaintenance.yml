@@ -10,7 +10,7 @@
       time: 144000 #40 hrs
   displayWeight: 100
   startingGear: ChiefOfMaintenanceGear
-  icon: "JobIconChiefEngineer"
+  icon: "JobIconChiefOfMaintenance"
   supervisors: job-supervisors-to
   accessGroups:
   - Command

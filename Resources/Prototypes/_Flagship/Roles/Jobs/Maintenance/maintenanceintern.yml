@@ -12,7 +12,7 @@
       time: 10800 #
   displayWeight: 70
   startingGear: MaintenanceInternGear
-  icon: "JobIconTechnicalAssistant"
+  icon: "JobIconMaintenanceIntern"
   supervisors: job-supervisors-com
   accessGroups:
   - Command

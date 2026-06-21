@@ -56,29 +56,60 @@
   jobName: job-name-bridgeensign
 
 # Maintenance
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconChiefOfMaintenance
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ChiefOfMaintenance
+  jobName: job-name-com
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLifeSupportSpecialist
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: LifeSupportSpecialist
+  jobName: job-name-lifesupportspec
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMaintenanceTechnician
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: MaintenanceTechnician
+  jobName: job-name-mainttech
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMaintenanceIntern
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: MaintenanceIntern
+  jobName: job-name-maintintern
 
 # Security
 - type: jobIcon
   parent: JobIcon
   id: JobIconSecurityChief
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: HeadOfSecurity
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: SecurityChief
   jobName: job-name-security-chief
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconSecurityMedic
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Brigmedic
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: SecurityMedic
   jobName: job-name-security-medic
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconSecurityOfficer
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: SecurityOfficer
   jobName: job-name-security-officer
 
@@ -86,8 +117,8 @@
   parent: JobIcon
   id: JobIconSecurityTrainee
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: SecurityCadet
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: SecurityTrainee
   jobName: job-name-security-trainee
 
 # Science
@@ -95,15 +126,15 @@
   parent: JobIcon
   id: JobIconScienceSupervisor
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: ResearchDirector
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ScienceSupervisor
   jobName: job-name-science-supervisor
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconRoboticist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: Roboticist
   jobName: job-name-roboticist
 
@@ -111,7 +142,7 @@
   parent: JobIcon
   id: JobIconScientist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: Scientist
   jobName: job-name-scientist
 
@@ -119,7 +150,7 @@
   parent: JobIcon
   id: JobIconResearchAssistant
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: ResearchAssistant
   jobName: job-name-research-assistant
 
@@ -129,24 +160,24 @@
   parent: JobIcon
   id: JobIconSuppliesQuartermaster
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: QuarterMaster
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: SuppliesQuartermaster
   jobName: job-name-suppliesquartermaster
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconArtillerySpecialist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: SecurityOfficer
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ArtillerySpecialist
   jobName: job-name-artilleryspecialist
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconSuppliesCrewman
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: CargoTechnician
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: SuppliesCrewman
   jobName: job-name-suppliescrewman
 
 
@@ -155,15 +186,15 @@
   parent: JobIcon
   id: JobIconChiefOfMedical
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: ChiefMedicalOfficer
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ChiefOfMedical
   jobName: job-name-chiefofmedical
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconMedicalDoctor
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: MedicalDoctor
   jobName: job-name-medicaldoctor
 
@@ -171,7 +202,7 @@
   parent: JobIcon
   id: JobIconChemist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: Chemist
   jobName: job-name-chemist
 
@@ -179,15 +210,15 @@
   parent: JobIcon
   id: JobIconParamedicalSpecialist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Paramedic
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: ParamedicalSpecialist
   jobName: job-name-paramedicalspecialist
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconMedicalIntern
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
     state: MedicalIntern
   jobName: job-name-medicalintern
 
@@ -196,30 +227,38 @@
   parent: JobIcon
   id: JobIconMessChef
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Chef
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: MessChef
   jobName: job-name-mess-chef
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBartender
+  icon:
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: Bartender
+  jobName: job-name-bartender
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconCustodian
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Janitor
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: Custodian
   jobName: job-name-custodian
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconHydroponicsBiologist
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Botanist
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: HydroponicsBiologist
   jobName: job-name-hydroponics-biologist
 
 - type: jobIcon
   parent: JobIcon
   id: JobIconOffDutyCrew
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Passenger
+    sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+    state: OffDutyCrew
   jobName: job-name-offduty-crew

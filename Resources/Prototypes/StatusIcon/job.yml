@@ -235,13 +235,13 @@
 
 # Service
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconBartender
-  icon:
-    sprite: *icon-rsi
-    state: Bartender
-  jobName: job-name-bartender
+# - type: jobIcon
+#   parent: JobIcon
+#   id: JobIconBartender
+#   icon:
+#     sprite: *icon-rsi
+#     state: Bartender
+#   jobName: job-name-bartender
 
 - type: jobIcon
   parent: JobIcon

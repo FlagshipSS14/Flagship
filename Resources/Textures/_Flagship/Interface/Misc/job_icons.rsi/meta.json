@@ -28,6 +28,81 @@
         },
         {
             "name": "BridgeEnsign"
+        },
+        {
+            "name": "ChiefOfMaintenance"
+        },
+        {
+            "name": "LifeSupportSpecialist"
+        },
+        {
+            "name": "MaintenanceTechnician"
+        },
+        {
+            "name": "MaintenanceIntern"
+        },
+        {
+            "name": "SecurityChief"
+        },
+        {
+            "name": "SecurityOfficer"
+        },
+        {
+            "name": "SecurityMedic"
+        },
+        {
+            "name": "SecurityTrainee"
+        },
+        {
+            "name": "ScienceSupervisor"
+        },
+        {
+            "name": "Roboticist"
+        },
+        {
+            "name": "Scientist"
+        },
+        {
+            "name": "ResearchAssistant"
+        },
+        {
+            "name": "SuppliesQuartermaster"
+        },
+        {
+            "name": "ArtillerySpecialist"
+        },
+        {
+            "name": "SuppliesCrewman"
+        },
+        {
+            "name": "ChiefOfMedical"
+        },
+        {
+            "name": "MedicalDoctor"
+        },
+        {
+            "name": "Chemist"
+        },
+        {
+            "name": "ParamedicalSpecialist"
+        },
+        {
+            "name": "MedicalIntern"
+        },
+        {
+            "name": "Bartender"
+        },
+        {
+            "name": "MessChef"
+        },
+        {
+            "name": "Custodian"
+        },
+        {
+            "name": "HydroponicsBiologist"
+        },
+        {
+            "name": "OffDutyCrew"
         }
     ]
 }

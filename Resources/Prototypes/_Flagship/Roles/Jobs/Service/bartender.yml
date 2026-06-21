@@ -5,11 +5,11 @@
   playTimeTracker: JobBartender
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Civilian
+      department: Service
       time: 0.5h
   startingGear: BartenderGear
   icon: "JobIconBartender"
-  supervisors: job-supervisors-hop
+  supervisors: job-supervisors-oo
   access:
   - Service
   - Maintenance
