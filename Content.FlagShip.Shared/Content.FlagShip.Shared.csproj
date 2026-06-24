@@ -10,6 +10,37 @@
     <ProjectReference Include="../Content.Shared/Content.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ShuttleRecords\SharedShuttleRecordsSystem.cs">
+      <Link>Shipyard\Components\ShuttleRecords\SharedShuttleRecordsSystem.cs</Link>
+    </Compile>
+    <Compile Update="ShuttleRecords\ShuttleRecord.cs">
+      <Link>Shipyard\Components\ShuttleRecords\ShuttleRecord.cs</Link>
+    </Compile>
+    <Compile Update="ShuttleRecords\ShuttleRecordsConsoleInterfaceState.cs">
+      <Link>Shipyard\Components\ShuttleRecords\ShuttleRecordsConsoleInterfaceState.cs</Link>
+    </Compile>
+    <Compile Update="ShuttleRecords\Components\ShuttleRecordsConsoleComponent.cs">
+      <Link>Shipyard\Components\ShuttleRecords\Components\ShuttleRecordsConsoleComponent.cs</Link>
+    </Compile>
+    <Compile Update="ShuttleRecords\Events\CopyDeedMessage.cs">
+      <Link>Shipyard\Components\ShuttleRecords\Events\CopyDeedMessage.cs</Link>
+    </Compile>
+    <Compile Remove="ShuttleRecords\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ShuttleRecords\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ShuttleRecords\**" />
+  </ItemGroup>
+
   <Import Project="../RobustToolbox/Imports/Shared.props" />
   <Import Project="../RobustToolbox/MSBuild/Robust.Properties.targets" />
   <Import Project="../RobustToolbox/MSBuild/Robust.CompNetworkGenerator.targets" />

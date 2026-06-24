@@ -21,6 +21,18 @@
     <!-- </FlagShip> -->
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Content.FlagShip.Shared\Shipyard\Components\ShuttleDeedComponent.cs">
+      <Link>Shuttles\Systems\ShuttleDeedComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\Content.FlagShip.Shared\SpaceBiomes\SpaceBiomePrototype.cs">
+      <Link>Shuttles\Components\SpaceBiomes\SpaceBiomePrototype.cs</Link>
+    </Compile>
+    <Compile Include="..\Content.FlagShip.Shared\SpaceBiomes\SpaceBiomeSourceComponent.cs">
+      <Link>Shuttles\Components\SpaceBiomes\SpaceBiomeSourceComponent.cs</Link>
+    </Compile>
+  </ItemGroup>
+
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
 </Project>

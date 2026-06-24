@@ -8,4 +8,7 @@ namespace Content.Shared.Shuttles.Components
         State,
         Thrusting,
     }
+
+    [Serializable, NetSerializable]
+    public sealed class ThrusterToggleMessage : BoundUserInterfaceMessage;
 }
