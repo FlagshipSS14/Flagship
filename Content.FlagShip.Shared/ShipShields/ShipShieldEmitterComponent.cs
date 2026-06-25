@@ -2,7 +2,7 @@ using Robust.Shared.Audio;
 
 namespace Content.FlagShip.Shared.ShipShields;
 
-[RegisterComponent]
+[RegisterComponent("ShipShieldEmitter")]
 public sealed partial class ShipShieldEmitterComponent : Component
 {
     [ViewVariables]
