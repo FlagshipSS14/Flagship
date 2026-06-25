@@ -33,6 +33,15 @@
         },
         {
             "name": "refill_contravend"
+        },
+        {
+            "name": "inhand-right"
+        },
+        {
+            "name": "inhand-left"
+        },
+        {
+            "name": "refill_barista"
         }
     ]
 }

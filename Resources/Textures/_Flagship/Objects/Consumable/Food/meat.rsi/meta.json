@@ -43,6 +43,30 @@
         },
         {
           "name": "hotdog"
+        },
+        {
+          "name": "resomi-cutlet-cooked"
+        },
+        {
+          "name": "resomi2-fried"
+        },
+        {
+          "name": "resomi-cooked"
+        },
+        {
+          "name": "chicken-bucket"
+        },
+        {
+          "name": "resomi-cutlet"
+        },
+        {
+          "name": "resomi-bucket"
+        },
+        {
+          "name": "bird-resomi"
+        },
+        {
+          "name": "resomi-fried"
         }
     ]
 }

@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "cpu_nfsd" 
+      "name": "cpu_nfsd"
     },
     {
       "name": "hacked-merc-fab-board"
@@ -18,6 +18,15 @@
     },
     {
       "name": "nfsdmodschematic"
+    },
+    {
+      "name": "datafarm_research"
+    },
+    {
+      "name": "datafarm_crypto"
+    },
+    {
+      "name": "cpu_rogue"
     }
   ]
 }

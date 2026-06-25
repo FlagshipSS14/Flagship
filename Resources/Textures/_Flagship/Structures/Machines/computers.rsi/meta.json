@@ -567,5 +567,141 @@
         ]
       ]
     }
+    {
+      "name": "shipyard_DrakeIndustries",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ]
+      ]
+    }
+    {
+      "name": "gunnery_keys",
+      "directions": 4
+    },
+    {
+      "name": "computer_not_rot",
+      "directions": 4
+    },
+    {
+      "name": "gunnery_screen",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "gunnery_keyboard",
+      "directions": 4
+    },
+    {
+      "name": "rogue_key",
+      "directions": 4
+    },
+    {
+      "name": "shipyard_SHM",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "comm_rogue",
+      "directions": 4,
+      "delays": [
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ],
+        [
+          1,
+          0.3,
+          1,
+          0.3
+        ]
+      ]
+    }
   ]
 }

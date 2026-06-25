@@ -61,6 +61,15 @@
     },
     {
       "name": "nfsd-flag"
+    },
+    {
+      "name": "di-banner"
+    },
+    {
+      "name": "shm-banner"
+    },
+    {
+      "name": "ngc-banner"
     }
   ]
 }

@@ -25,6 +25,18 @@
     },
     {
       "name": "folder-base"
+    },
+    {
+      "name": "manila_torn"
+    },
+    {
+      "name": "manila_closed"
+    },
+    {
+      "name": "manila_MOOLAH"
+    },
+    {
+      "name": "manila_open"
     }
   ]
 }

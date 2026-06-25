@@ -30,6 +30,12 @@
     },
     {
       "name": "stamp-bailiff"
-    }
+    },
+    {
+      "name": "stamp-ussp"
+    },
+    {
+      "name": "stamp-ussp-stratcomm"
+    },
   ]
 }
