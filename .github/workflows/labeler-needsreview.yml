@@ -1,7 +1,10 @@
-﻿  pull_request_target:
+﻿name: "Labels: Review"
+
+on:
+  pull_request_target:
     types: [review_requested, opened]
 
-  jobs:
+jobs:
   add_label:
     runs-on: ubuntu-latest
     steps:

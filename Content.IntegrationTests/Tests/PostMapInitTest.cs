@@ -81,8 +81,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] DoNotMapWhitelist =
         {
             "/Maps/centcomm.yml",
-            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
-            "/Maps/_Flagship/Test/dev_map.yml"
+            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
         };
 
         /// <summary>
