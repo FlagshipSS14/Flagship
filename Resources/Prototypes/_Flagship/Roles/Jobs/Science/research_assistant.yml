@@ -13,7 +13,7 @@
       time: 54000 # 15 hours
   displayWeight: 40
   accessGroups:
-  - Science
+  - Research
 
 - type: startingGear
   id: FlagResearchAssistantGear

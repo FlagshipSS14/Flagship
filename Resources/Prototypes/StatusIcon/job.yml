@@ -213,13 +213,13 @@
     state: SecurityCadet
   jobName: job-name-cadet
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSecurityOfficerOld
-  icon:
-    sprite: *icon-rsi
-    state: SecurityOfficer
-  jobName: job-name-security
+#- type: jobIcon
+#  parent: JobIcon
+#  id: JobIconSecurityOfficerOld
+#  icon:
+#    sprite: *icon-rsi
+#    state: SecurityOfficer
+#  jobName: job-name-security
 
 - type: jobIcon
   parent: JobIcon

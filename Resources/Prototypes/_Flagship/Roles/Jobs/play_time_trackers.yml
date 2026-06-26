@@ -98,4 +98,5 @@
 - type: playTimeTracker
   id: JobHydroponicsBiologist
 
-
+- type: playTimeTracker
+  id: JobFlagBartender
