@@ -1,16 +1,12 @@
+using System.Runtime.InteropServices;
+using Content.Client.Resources;
 using Content.FlagShip.Shared.ShipShields;
-using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
-using System.Numerics;
-using Content.Client.Resources;
-using Robust.Client.Physics;
-using Robust.Shared.Prototypes;
-using System.Runtime.InteropServices;
-using Robust.Client.GameObjects;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.FlagShip.Client.ShipShields;
 
@@ -32,9 +28,9 @@ public sealed class ShipShieldOverlay : Overlay
         _entManager = entityManager;
         _fixture = _entManager.EntitySysManager.GetEntitySystem<FixtureSystem>();
         _physics = _entManager.EntitySysManager.GetEntitySystem<Robust.Client.Physics.PhysicsSystem>();
-        _shieldTexture = _resourceCache.GetTexture("/Textures/_Flagship/ShipShields/shieldtex.png");
+        _shieldTexture = _resourceCache.GetTexture("/Textures/_Crescent/ShipShields/shieldtex.png");
 
-        _unshadedShader = prototypeManager.Index(SpriteSystem.UnshadedId).Instance();
+        _unshadedShader = prototypeManager.Index<ShaderPrototype>("unshaded").Instance();
 
         ZIndex = 8;
     }

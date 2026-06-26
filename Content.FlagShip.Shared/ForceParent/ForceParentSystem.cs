@@ -10,10 +10,10 @@ public sealed partial class ForceParentSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ForceParentComponent, MoveEvent>(OnMove);
+        SubscribeLocalEvent<FlagShip.Shared.ForceParent.ForceParentComponent, MoveEvent>(OnMove);
     }
 
-    private void OnMove(Entity<ForceParentComponent> ent, ref MoveEvent args)
+    private void OnMove(Entity<FlagShip.Shared.ForceParent.ForceParentComponent> ent, ref MoveEvent args)
     {
         if (TerminatingOrDeleted(ent))
             return;
@@ -26,7 +26,7 @@ public sealed partial class ForceParentSystem : EntitySystem
 
     public void SetForceParent(EntityUid uid, EntityCoordinates coord)
     {
-        var comp = EnsureComp<ForceParentComponent>(uid);
+        var comp = EnsureComp<FlagShip.Shared.ForceParent.ForceParentComponent>(uid);
         comp.Position = coord;
         Transform(uid).GridTraversal = false;
         _transform.SetCoordinates(uid, coord); // if this fails the other method shouldn't

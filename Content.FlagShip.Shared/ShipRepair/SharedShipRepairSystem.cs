@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.FlagShip.Shared.ShipRepair.Components;
 using Content.FlagShip.Shared.ForceParent;
 using Content.Shared.Charges.Systems;
 using Content.Shared.DoAfter;
@@ -45,7 +44,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
             return;
 
-        var repairData = EnsureComp<ShipRepairDataComponent>(gridUid);
+        var repairData = EnsureComp<Components.ShipRepairDataComponent>(gridUid);
         repairData.Chunks.Clear();
         repairData.EntityPalette.Clear();
 
@@ -67,7 +66,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         }
 
         // entities snapshot
-        var repairables = new HashSet<Entity<ShipRepairableComponent>>();
+        var repairables = new HashSet<Entity<Components.ShipRepairableComponent>>();
         _lookup.GetLocalEntitiesIntersecting(gridUid, grid.LocalAABB, repairables);
         foreach (var childEnt in repairables)
         {
@@ -105,7 +104,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
             var gridIndices = _map.LocalToTile(gridUid, grid, childXform.Coordinates);
             var chunk = GetCreateChunk(repairData, gridIndices);
 
-            chunk.Entities[chunk.NextUid++] = new ShipRepairEntitySpecifier
+            chunk.Entities[chunk.NextUid++] = new Components.ShipRepairEntitySpecifier
             {
                 ProtoIndex = paletteIndex,
                 OriginalEntity = GetNetEntity(childEnt),
@@ -117,7 +116,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         Dirty(gridUid, repairData);
     }
 
-    public bool TryRepairTileTile(Entity<ShipRepairDataComponent> grid, Vector2i indices)
+    public bool TryRepairTileTile(Entity<Components.ShipRepairDataComponent> grid, Vector2i indices)
     {
         if (!TryGetChunk(grid.Comp, indices, out var chunk) || !TryComp<MapGridComponent>(grid, out var gridComp))
             return false;
@@ -147,14 +146,14 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         return new Vector2i(x, y);
     }
 
-    protected ShipRepairChunk GetCreateChunk(ShipRepairDataComponent data, Vector2i gridIndices)
+    protected Components.ShipRepairChunk GetCreateChunk(Components.ShipRepairDataComponent data, Vector2i gridIndices)
     {
         var chunkSize = data.ChunkSize;
         var chunkIndices = GetRepairChunkIndices(gridIndices, chunkSize);
 
         if (!data.Chunks.TryGetValue(chunkIndices, out var chunk))
         {
-            chunk = new ShipRepairChunk
+            chunk = new Components.ShipRepairChunk
             {
                 Tiles = new int[chunkSize * chunkSize]
             };
@@ -165,7 +164,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         return chunk;
     }
 
-    protected bool TryGetChunk(ShipRepairDataComponent data, Vector2i gridIndices, [NotNullWhen(true)] out ShipRepairChunk? chunk)
+    protected bool TryGetChunk(Components.ShipRepairDataComponent data, Vector2i gridIndices, [NotNullWhen(true)] out Components.ShipRepairChunk? chunk)
     {
         var chunkSize = data.ChunkSize;
         var chunkIndices = GetRepairChunkIndices(gridIndices, chunkSize);

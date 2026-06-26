@@ -41,13 +41,9 @@ public sealed partial class ShipRepairSystem : SharedShipRepairSystem
         }
 
         float maxRange = 0f;
-        foreach (var handId in _hands.EnumerateHands(player.Value))
-        {
-            if (_hands.TryGetHeldItem(player.Value, handId, out var held)
-                && _toolQuery.TryComp(held, out var tool)
-                && tool.GhostRenderRadius > maxRange)
+        foreach (var hand in _hands.EnumerateHands(player.Value))
+            if (_toolQuery.TryComp(hand.HeldEntity, out var tool) && tool.GhostRenderRadius > maxRange)
                 maxRange = tool.GhostRenderRadius;
-        }
 
         if (maxRange <= 0f)
         {
@@ -145,10 +141,8 @@ public sealed partial class ShipRepairSystem : SharedShipRepairSystem
         // check which ghosts went out of range
         var toRemove = new List<GhostPosData>();
         foreach (var key in _activeGhosts.Keys)
-        {
             if (!_visibleGhosts.Contains(key))
                 toRemove.Add(key);
-        }
 
         foreach (var key in toRemove)
         {
@@ -186,9 +180,7 @@ public sealed partial class ShipRepairSystem : SharedShipRepairSystem
     private void ClearGhosts()
     {
         foreach (var uid in _activeGhosts.Values)
-        {
             QueueDel(uid);
-        }
 
         _activeGhosts.Clear();
     }
@@ -206,6 +198,12 @@ public sealed partial class ShipRepairSystem : SharedShipRepairSystem
             var sprite = _serialization.CreateCopy(specSprite, notNullableOverride: true);
             AddComp(ghost, sprite);
             var ent = (ghost, sprite);
+
+            // evil hacks to not trip debug asserts
+            var old = specSprite.Owner;
+            specSprite.Owner = ghost;
+            _sprite.CopySprite((ghost, specSprite), ent);
+            specSprite.Owner = old;
 
             if (proto.TryGetComponent<IconSmoothComponent>(out var specSmooth, Factory))
             {

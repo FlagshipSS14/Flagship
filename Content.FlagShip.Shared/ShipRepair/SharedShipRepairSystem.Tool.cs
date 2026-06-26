@@ -116,24 +116,33 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
                 // try repair another if we're already trying to repair this entity
                 if (TryComp<DoAfterComponent>(args.User, out var doAfterComp))
                 {
-                    // We intentionally avoid touching doAfterComp.DoAfters directly here.
-                    // DoAfterComponent internals are access-restricted to SharedDoAfterSystem.
+                    var hasIdentical = false;
                     _toRemoveIds.Clear();
                     foreach (var doAfterId in ent.Comp.DoAfters)
                     {
-                        // Query status through the do-after system API to satisfy access rules.
-                        if (!_doAfter.IsRunning(doAfterId, doAfterComp))
+                        if (!doAfterComp.DoAfters.TryGetValue(doAfterId.Index, out var doAfter)
+                            || doAfter.Args.Event is not ShipRepairDoAfterEvent repairEv)
+                        {
                             _toRemoveIds.Add(doAfterId);
-                    }
+                            continue;
+                        }
 
-                    // Drop stale IDs so future checks only examine live do-afters.
+                        if (repairEv.TargetGridIndices == gridIndices && repairEv.RepairId == id)
+                        {
+                            hasIdentical = true;
+                            break;
+                        }
+                    }
                     foreach (var remove in _toRemoveIds)
                         ent.Comp.DoAfters.Remove(remove);
+
+                    if (hasIdentical)
+                        continue;
                 }
 
-                var hasCharges = _charges.HasCharges(ent.Owner, cost);
-                notEnoughCharges |= !hasCharges;
-                if (needsRepair && hasCharges)
+                var enough = !_charges.HasInsufficientCharges(ent, cost);
+                notEnoughCharges |= !enough;
+                if (needsRepair && enough)
                 {
                     StartRepair(ent, args.User, targetGrid, gridIndices, delay, cost, id);
                     return;
@@ -190,7 +199,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         if (!TryGetChunk(repairData, args.TargetGridIndices, out var chunk))
             return;
 
-        if (!_charges.HasCharges(ent.Owner, args.Cost))
+        if (_charges.HasInsufficientCharges(ent, args.Cost))
         {
             _popup.PopupEntity(Loc.GetString("ship-repair-tool-insufficient-ammo"), ent, args.User);
             return;
@@ -228,7 +237,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
             TryRepairTileTile((targetGrid, repairData), args.TargetGridIndices);
         }
 
-        _charges.TryUseCharges(ent.Owner, args.Cost);
+        _charges.UseCharges(ent, args.Cost);
         args.Handled = true;
     }
 }
