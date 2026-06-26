@@ -35,12 +35,10 @@
   id: TacticalOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitTacticalOfficer
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatBeretCommand
+    shoes: ClothingShoesBootsJack
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltHolster
+    gloves: ClothingHandsGlovesColorWhite
+    back: ClothingBackpackSatchelBridgeCommand
     id: TacticalOfficerPDA
     ears: ClothingHeadsetAltTacticalOfficer
   storage:

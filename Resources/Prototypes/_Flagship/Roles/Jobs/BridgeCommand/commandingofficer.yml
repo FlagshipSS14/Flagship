@@ -34,11 +34,10 @@
   id: CommandingOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCommandingOfficer
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsJack
     head: ClothingHeadHatCommandingOfficer
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    back: ClothingBackpackSatchelLeather
+    gloves: ClothingHandsGlovesColorWhite
+    back: ClothingBackpackSatchelBridgeCommand
     id: CommandingOfficerPDA
     ears: ClothingHeadsetAltCommandingOfficer
-    belt: ClothingBeltHolster

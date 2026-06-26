@@ -34,12 +34,10 @@
   id: FlightControlOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitBridgeCommand
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatBeretCommand
+    shoes: ClothingShoesBootsJack
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltHolster
+    gloves: ClothingHandsGlovesColorWhite
+    back: ClothingBackpackSatchelBridgeCommand
     id: FlightControlOfficerPDA
     ears: ClothingHeadsetAltFlightControlOfficer
   storage:

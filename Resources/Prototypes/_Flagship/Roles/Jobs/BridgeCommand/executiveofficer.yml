@@ -35,12 +35,11 @@
   id: ExecutiveOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitExecutiveOfficer
-    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretCommand
+    shoes: ClothingShoesBootsJack
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltHolster
+    gloves: ClothingHandsGlovesColorWhite
+    back: ClothingBackpackSatchelBridgeCommand
     id: ExecutiveOfficerPDA
     ears: ClothingHeadsetAltExecutiveOfficer
   storage:

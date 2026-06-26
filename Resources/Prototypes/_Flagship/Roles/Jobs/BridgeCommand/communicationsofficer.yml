@@ -34,12 +34,10 @@
   id: CommunicationsOfficerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitBridgeCommand
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatBeretCommand
+    shoes: ClothingShoesBootsJack
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesCaptain
-    back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltHolster
+    gloves: ClothingHandsGlovesColorWhite
+    back: ClothingBackpackSatchelBridgeCommand
     id: CommunicationsOfficerPDA
     ears: ClothingHeadsetAltCommunicationsOfficer
   storage:
