@@ -1,6 +1,8 @@
 using Content.FlagShip.Common.FTLDrive;
 using Content.Shared.Audio;
+using Content.Shared.Explosion.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
@@ -11,6 +13,8 @@ public sealed partial class FTLDriveSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedExplosionSystem _explosion = default!;
+    [Dependency] private SharedPowerStateSystem _powerState = default!;
 
     public override void Initialize()
     {
@@ -27,10 +31,10 @@ public sealed partial class FTLDriveSystem : EntitySystem
         var query = EntityQueryEnumerator<ActiveFTLDriveComponent, FTLDriveComponent>();
         while (query.MoveNext(out var uid, out _, out var drive))
         {
-            if (drive.IsEngaged && curTime > drive.EngagedBreakdownTime)
+            if (drive.State == FTLDriveState.Engaged && curTime > drive.EngagedBreakdownTime)
                 BreakDownFTLDrive((uid, drive));
 
-            if (drive.IsCharging && curTime > drive.StartUpFinishTime)
+            if (drive.State == FTLDriveState.Charging && curTime > drive.StartUpFinishTime)
                 FinishChargingFTLDrive((uid, drive));
         }
     }
@@ -47,10 +51,13 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
     public void TryToStartupFTLDrive(Entity<FTLDriveComponent> ent)
     {
-        if (ent.Comp.IsCharging || _timing.CurTime < ent.Comp.CoolDownFinishedTime)
+        if (ent.Comp.State is not FTLDriveState.Idle && ent.Comp.State is not FTLDriveState.Engaged)
             return;
 
-        if (ent.Comp.IsEngaged)
+        if  (_timing.CurTime < ent.Comp.CoolDownFinishedTime)
+            return;
+
+        if (ent.Comp.State == FTLDriveState.Engaged)
         {
             ShutDownFTLDrive(ent, ent.Comp.CoolDownTime);
             return;
@@ -65,7 +72,7 @@ public sealed partial class FTLDriveSystem : EntitySystem
             _audio.Stop(ent.Comp.SoundEntity);
 
         ent.Comp.SoundEntity = _audio.PlayPredicted(ent.Comp.SpoolUpSound, ent.Owner, ent.Owner)?.Entity;
-        ent.Comp.IsCharging = true;
+        ent.Comp.State = FTLDriveState.Charging;
 
         ent.Comp.StartUpFinishTime = _timing.CurTime + ent.Comp.StartUpTime;
 
@@ -76,16 +83,20 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
     public void ShutDownFTLDrive(Entity<FTLDriveComponent> ent, TimeSpan coolDownTime)
     {
+        _powerState.SetWorkingState(ent.Owner, false);
+
         if (ent.Comp.SoundEntity is not null)
             _audio.Stop(ent.Comp.SoundEntity);
 
         if (TryComp<AmbientSoundComponent>(ent.Owner, out var ambient))
+        {
             ambient.Sound = ent.Comp.LoopSound;
+            Dirty(ent.Owner, ambient);
+        }
 
         ent.Comp.SoundEntity = _audio.PlayPredicted(ent.Comp.SpoolDownSound, ent.Owner, ent.Owner)?.Entity;
 
-        ent.Comp.IsCharging = false;
-        ent.Comp.IsEngaged = false;
+        ent.Comp.State = FTLDriveState.Idle;
 
         ent.Comp.CoolDownFinishedTime = _timing.CurTime + coolDownTime;
 
@@ -93,6 +104,9 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
         if (ent.Comp.FTLComponents is not null)
             EntityManager.RemoveComponents(ent.Owner, ent.Comp.FTLComponents);
+
+        if (ent.Comp.EngagedComponents is not null)
+            EntityManager.RemoveComponents(ent.Owner, ent.Comp.EngagedComponents);
 
         var shuttleUid = Transform(ent.Owner).GridUid;
 
@@ -106,20 +120,29 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
     public void FinishChargingFTLDrive(Entity<FTLDriveComponent> ent)
     {
-        ent.Comp.IsEngaged = true;
-        ent.Comp.IsCharging = false;
+        _powerState.SetWorkingState(ent.Owner, true);
+        ent.Comp.State = FTLDriveState.Engaged;
 
         var shuttleUid = Transform(ent.Owner).GridUid;
 
         if (shuttleUid is not null)
         {
-            var shuttleDriveComponent = EnsureComp<ShuttleFTLDriveComponent>(shuttleUid.Value);
+            if (!HasComp<ShuttleFTLDriveComponent>(shuttleUid.Value))
+            {
+                var shuttleDriveComponent = EnsureComp<ShuttleFTLDriveComponent>(shuttleUid.Value);
 
-            shuttleDriveComponent.Range = ent.Comp.Range;
+                shuttleDriveComponent.Range = ent.Comp.Range;
+                shuttleDriveComponent.FTLDriveEntity = ent;
+                Dirty(shuttleUid.Value, shuttleDriveComponent);
+            }
+            else
+            {
+                Log.Warning("Tried to add ShuttleFTLDriveComponent to: " + shuttleUid + " But already had a ShuttleFTLDriveComponent!");
+            }
         }
 
-        if (ent.Comp.FTLComponents is not null)
-            EntityManager.AddComponents(ent.Owner, ent.Comp.FTLComponents);
+        if (ent.Comp.EngagedComponents is not null)
+            EntityManager.AddComponents(ent.Owner, ent.Comp.EngagedComponents);
 
         if (TryComp<AmbientSoundComponent>(ent.Owner, out var ambient))
             ambient.Sound = ent.Comp.EngagedLoopSound;
@@ -129,6 +152,10 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
     public void BreakDownFTLDrive(Entity<FTLDriveComponent> ent)
     {
+        if (ent.Comp.State is not FTLDriveState.Engaged)
+            return;
+
         ShutDownFTLDrive(ent, ent.Comp.CoolDownTimeBreakDown);
+        _explosion.QueueExplosion(ent.Owner, ent.Comp.ExplosionType, ent.Comp.TotalIntensity, ent.Comp.IntensitySlope, ent.Comp.MaxTileBreak, canCreateVacuum:true);
     }
 }

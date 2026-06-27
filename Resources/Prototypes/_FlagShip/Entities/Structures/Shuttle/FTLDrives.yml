@@ -19,12 +19,13 @@
   - type: FTLDrive
     fTLComponents:
     - type: GravityWell
-      maxRange: 2
-      baseRadialAcceleration: 10
+      maxRange: 4
+      baseRadialAcceleration: 20
       baseTangentialAcceleration: 0
     - type: SingularityDistortion
-      intensity: 5
+      intensity: 10
       falloffPower: 1
+    engagedComponents:
     - type: PointLight
       radius: 5.5
       energy: 10
@@ -32,7 +33,7 @@
   - type: AmbientOnPowered
   - type: AmbientSound
     enabled: false
-    volume: 12
+    volume: 15
     range: 7
     sound:
       path: /Audio/_FlagShip/Effects/Shuttle/FTL_drive_hum.ogg

@@ -1,3 +1,4 @@
+using Content.Shared.Explosion;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -5,9 +6,18 @@ using Robust.Shared.Serialization;
 
 namespace Content.FlagShip.Shared.FTLDrive;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class FTLDriveComponent : Component
 {
+    /// <summary>
+    /// The Range the FTL allows
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float Range = 5000;
+
+    [DataField, AutoNetworkedField]
+    public FTLDriveState State;
+
     /// <summary>
     /// How long it takes for the drive to cool down when a breakdown happens (from being engaged too long)
     /// </summary>
@@ -53,11 +63,32 @@ public sealed partial class FTLDriveComponent : Component
     [DataField]
     public EntityUid? SoundEntity;
 
+    [DataField]
+    public ProtoId<ExplosionPrototype> ExplosionType = "Radioactive";
+
+    [DataField]
+    public float IntensitySlope = 1;
+
+    [DataField]
+    public float TotalIntensity = 100;
+
+    [DataField]
+    public float TileBreakScale = 20f;
+
+    [DataField]
+    public int MaxTileBreak = int.MaxValue;
+
     /// <summary>
     /// Components that are added when the ship enters bluespace
     /// </summary>
     [DataField]
     public ComponentRegistry? FTLComponents;
+
+    /// <summary>
+    /// Components that are added when the FTL drive is engaged
+    /// </summary>
+    [DataField]
+    public ComponentRegistry? EngagedComponents;
 
     [DataField]
     public SoundPathSpecifier SpoolUpSound = new ("/Audio/_FlagShip/Effects/Shuttle/main_drive_spoolup.ogg");
@@ -70,22 +101,19 @@ public sealed partial class FTLDriveComponent : Component
 
     [DataField]
     public SoundPathSpecifier LoopSound = new ("/Audio/_FlagShip/Effects/Shuttle/FTL_drive_hum.ogg");
-
-    [DataField]
-    public bool IsCharging;
-
-    [DataField]
-    public bool IsEngaged;
-
-    /// <summary>
-    /// The Range the FTL allows
-    /// </summary>
-    [DataField]
-    public float Range = 1000;
 }
 
 [Serializable, NetSerializable]
 public enum FTLDriveVisuals : byte
 {
     Active,
+}
+
+[Serializable, NetSerializable]
+public enum FTLDriveState : byte
+{
+    Idle,
+    Charging,
+    Engaged,
+    InWarp,
 }
