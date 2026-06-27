@@ -17,7 +17,7 @@
     <ProjectReference Include="..\Content.Tests\Content.Tests.csproj" />
     <!-- <FlagShip> -->
     <ProjectReference Include="..\Content.FlagShip.Server\Content.FlagShip.Server.csproj" />
-    <ProjectReference Include="..\Content.FlagShip.Cliebt\Content.FlagShip.Cliebt.csproj" />
+    <ProjectReference Include="..\Content.FlagShip.Client\Content.FlagShip.Client.csproj" />
     <ProjectReference Include="..\Content.FlagShip.Shared\Content.FlagShip.Shared.csproj" />
     <!-- </FlagShip> -->
   </ItemGroup>
