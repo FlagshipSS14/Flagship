@@ -1,0 +1,46 @@
+- type: job
+  id: OperationsOfficer
+  name: job-name-operationsofficer
+  description: job-description-operationsofficer
+  playTimeTracker: JobOperationsOfficer
+  setPreference: true
+  supervisors: job-supervisors-coxo
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: MilitaryPolice
+      time: 54000 # 15 hours
+  displayWeight: 70
+  startingGear: OperationsOfficerGear
+  icon: "JobIconOperationsOfficer"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: OperationsOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperationsOfficer
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretNavy
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesNavyOfficer
+    back: ClothingBackpackSatchelBridgeCommand
+    id: OperationsOfficerPDA
+    ears: ClothingHeadsetAltOperationsOfficer
+  storage:
+    back:
+    - Flash
