@@ -8,3 +8,29 @@
     sprite: _Flagship/Clothing/Head/Hats/commandingofficer.rsi
   - type: Clothing
     sprite: _Flagship/Clothing/Head/Hats/commandingofficer.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretNavy
+  name: Navy Officer Beret
+  description: A beret worn by high-ranking officers of the Nanotrasen Navy Corps.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/navyberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/navyberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable

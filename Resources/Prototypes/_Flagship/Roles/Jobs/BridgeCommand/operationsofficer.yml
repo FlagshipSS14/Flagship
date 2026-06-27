@@ -35,8 +35,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperationsOfficer
     shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretNavy
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesColorWhite
+    gloves: ClothingHandsGlovesNavyOfficer
     back: ClothingBackpackSatchelBridgeCommand
     id: OperationsOfficerPDA
     ears: ClothingHeadsetAltOperationsOfficer

@@ -35,6 +35,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitBridgeCommand
     shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBridgeEnsignSoft
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesColorWhite
     back: ClothingBackpackSatchelBridgeCommand

@@ -37,7 +37,7 @@
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatCommandingOfficer
     eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesColorWhite
+    gloves: ClothingHandsGlovesNavyOfficer
     back: ClothingBackpackSatchelBridgeCommand
     id: CommandingOfficerPDA
     ears: ClothingHeadsetAltCommandingOfficer
