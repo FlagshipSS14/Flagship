@@ -25,7 +25,7 @@
   id: LifeSupportSpecialistGear
   equipment:
     id: AtmosPDA
-    head: ClothingHeadHatHardHatOrange
+    head: ClothingHeadHatHardhatOrange
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetEngineering
     outerClothing: ClothingOuterVestHazard
