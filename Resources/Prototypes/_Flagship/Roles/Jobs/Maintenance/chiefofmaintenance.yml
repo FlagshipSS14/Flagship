@@ -1,0 +1,27 @@
+- type: job
+  id: ChiefOfMaintenance
+  name: job-name-chiefofmaintenance
+  description: job-description-chiefofmaintenance
+  playTimeTracker: JobChiefOfMaintenance
+  setPreference: true
+  requireAdminNotify: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
+  displayWeight: 100
+  startingGear: ChiefOfMaintenanceGear
+  icon: "JobIconChiefOfMaintenance"
+  supervisors: job-supervisors-to
+  accessGroups:
+  - Command
+
+- type: startingGear
+  id: ChiefOfMaintenanceGear
+  equipment:
+    id: CEPDA
+    eyes: ClothingEyesGlassesMeson
+    ears: ClothingHeadsetCE
+    belt: ClothingBeltUtilityEngineering
+  storage:
+    back:
+    - Flash

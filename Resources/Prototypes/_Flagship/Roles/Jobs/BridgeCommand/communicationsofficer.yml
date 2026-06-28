@@ -1,0 +1,46 @@
+- type: job
+  id: CommunicationsOfficer
+  name: job-name-communicationsofficer
+  description: job-description-communicationsofficer
+  playTimeTracker: JobCommunicationsOfficer
+  setPreference: true
+  supervisors: job-supervisors-coxo
+  requireAdminNotify: true
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Maintenance
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: MilitaryPolice
+      time: 54000 # 15 hours
+  displayWeight: 60
+  startingGear: CommunicationsOfficerGear
+  icon: "JobIconCommunicationsOfficer"
+  access:
+  - Captain
+  accessGroups:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+     components:
+       - type: CommandStaff
+
+- type: startingGear
+  id: CommunicationsOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBridgeCommand
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretNavy
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesNavyOfficer
+    back: ClothingBackpackSatchelBridgeCommand
+    id: CommunicationsOfficerPDA
+    ears: ClothingHeadsetAltCommunicationsOfficer
+  storage:
+    back:
+    - Flash
