@@ -36,6 +36,3 @@
     back: ClothingBackpackMilitaryPolice
     belt: ClothingBeltMilitaryPoliceWebbingFilled
     shoes: ClothingShoesBootsCombatFilled
-  storage:
-    belt:
-    - Flash
