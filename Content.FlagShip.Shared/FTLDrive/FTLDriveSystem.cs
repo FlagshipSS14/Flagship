@@ -1,7 +1,7 @@
 using Content.FlagShip.Common.FTLDrive;
 using Content.Shared.Audio;
 using Content.Shared.Explosion.EntitySystems;
-using Content.Shared.Interaction;
+using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio.Systems;
@@ -16,41 +16,25 @@ public sealed partial class FTLDriveSystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedExplosionSystem _explosion = default!;
     [Dependency] private SharedPowerStateSystem _powerState = default!;
-    [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ShuttleFTLDriveComponent, GetFTLDriveRangeEvent>(OnGetRange);
-        SubscribeLocalEvent<FTLDriveComponent, FTLChargeButtonPressedMessage>(OnButtonPressed);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var curTime = _timing.CurTime;
-        var query = EntityQueryEnumerator<ActiveFTLDriveComponent, FTLDriveComponent>();
-        while (query.MoveNext(out var uid, out _, out var drive))
-        {
-            var data = new FTLDriveBuiState(GetDriveStatus(uid));
-            _ui.SetUiState(uid, FTLDriveUiKey.Key, data);
-
-            if (drive.State == FTLDriveState.Engaged && curTime > drive.EngagedBreakdownTime)
-                BreakDownFTLDrive((uid, drive));
-
-            if (drive.State == FTLDriveState.Charging && curTime > drive.StartUpFinishTime)
-                FinishChargingFTLDrive((uid, drive));
-        }
-    }
-    private void OnButtonPressed(Entity<FTLDriveComponent> ent, ref FTLChargeButtonPressedMessage args)
-    {
-        TryToStartupFTLDrive(ent);
+        SubscribeLocalEvent<FTLDriveComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     private void OnGetRange(Entity<ShuttleFTLDriveComponent> ent, ref GetFTLDriveRangeEvent args)
     {
         args.Range = ent.Comp.Range;
+    }
+
+    private void OnPowerChanged(Entity<FTLDriveComponent> ent, ref PowerChangedEvent args)
+    {
+        if (args.Powered)
+            return;
+
+        ent.Comp.NextPowerCheckTime = _timing.CurTime + ent.Comp.PowerGracePeriod;
     }
 
     public void TryToStartupFTLDrive(Entity<FTLDriveComponent> ent)
@@ -81,6 +65,8 @@ public sealed partial class FTLDriveSystem : EntitySystem
         ent.Comp.StartUpFinishTime = _timing.CurTime + ent.Comp.StartUpTime;
 
         _appearance.SetData(ent.Owner, FTLDriveVisuals.Active, true);
+
+        _powerState.SetWorkingState(ent.Owner, true);
 
         Dirty(ent);
         EnsureComp<ActiveFTLDriveComponent>(ent.Owner);
@@ -120,12 +106,12 @@ public sealed partial class FTLDriveSystem : EntitySystem
             RemComp<ShuttleFTLDriveComponent>(shuttleUid.Value);
         }
 
+        ent.Comp.EngagedBreakdownTime = _timing.CurTime;
         RemComp<ActiveFTLDriveComponent>(ent.Owner);
     }
 
     public void FinishChargingFTLDrive(Entity<FTLDriveComponent> ent)
     {
-        _powerState.SetWorkingState(ent.Owner, true);
         ent.Comp.State = FTLDriveState.Engaged;
 
         var shuttleUid = Transform(ent.Owner).GridUid;
@@ -150,7 +136,10 @@ public sealed partial class FTLDriveSystem : EntitySystem
             EntityManager.AddComponents(ent.Owner, ent.Comp.EngagedComponents);
 
         if (TryComp<AmbientSoundComponent>(ent.Owner, out var ambient))
+        {
             ambient.Sound = ent.Comp.EngagedLoopSound;
+            Dirty(ent.Owner, ambient);
+        }
 
         ent.Comp.EngagedBreakdownTime = _timing.CurTime + ent.Comp.StableEngagedTime;
     }
@@ -190,6 +179,15 @@ public sealed partial class FTLDriveSystem : EntitySystem
         data.State = drive.State;
         data.CoolDownFinishedTime = drive.CoolDownFinishedTime - _timing.CurTime;
         data.CoolDownFailureTime = drive.EngagedBreakdownTime - _timing.CurTime;
+
+        // I can't find how to get the power it's actually using in shared soo I guess I'll just use this
+        if (TryComp<PowerStateComponent>(uid, out var power))
+        {
+            if (power.IsWorking)
+                data.PowerDraw = power.WorkingPowerDraw;
+            else
+                data.PowerDraw = power.IdlePowerDraw;
+        }
 
         return data;
     }

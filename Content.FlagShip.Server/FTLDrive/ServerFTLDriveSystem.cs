@@ -1,12 +1,17 @@
 using Content.FlagShip.Shared.FTLDrive;
+using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Events;
+using Robust.Server.GameObjects;
+using Robust.Shared.Timing;
 
 namespace Content.FlagShip.Server.FTLDrive;
 
 public sealed partial class ServerFTLDriveSystem : EntitySystem
 {
-
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private FTLDriveSystem _ftlDrive = default!;
+    [Dependency] private PowerReceiverSystem _power = default!;
 
     public override void Initialize()
     {
@@ -14,6 +19,44 @@ public sealed partial class ServerFTLDriveSystem : EntitySystem
 
         SubscribeLocalEvent<ShuttleFTLDriveComponent, FTLStartedEvent>(OnFTLStarted);
         SubscribeLocalEvent<ShuttleFTLDriveComponent, FTLCompletedEvent>(OnFTLCompleted);
+        SubscribeLocalEvent<FTLDriveComponent, FTLChargeButtonPressedMessage>(OnButtonPressed);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var curTime = _timing.CurTime;
+        var query = EntityQueryEnumerator<ActiveFTLDriveComponent, FTLDriveComponent>();
+        while (query.MoveNext(out var uid, out _, out var drive))
+        {
+            if (drive.NextPowerCheckTime != TimeSpan.Zero && curTime > drive.NextPowerCheckTime)
+            {
+                if (!_power.IsPowered(uid))
+                    _ftlDrive.ShutDownFTLDrive((uid, drive), drive.CoolDownTimeBreakDown);
+
+                drive.NextPowerCheckTime = TimeSpan.Zero;
+                Dirty(uid, drive);
+            }
+
+            if (drive.State == FTLDriveState.Engaged && curTime > drive.EngagedBreakdownTime)
+                _ftlDrive.BreakDownFTLDrive((uid, drive));
+
+            if (drive.State == FTLDriveState.Charging && curTime > drive.StartUpFinishTime)
+                _ftlDrive.FinishChargingFTLDrive((uid, drive));
+        }
+
+        var query2 = EntityQueryEnumerator<FTLDriveComponent>();
+        while (query2.MoveNext(out var uid, out _))
+        {
+            var data = new FTLDriveBuiState(_ftlDrive.GetDriveStatus(uid));
+            _ui.SetUiState(uid, FTLDriveUiKey.Key, data);
+        }
+    }
+
+    private void OnButtonPressed(Entity<FTLDriveComponent> ent, ref FTLChargeButtonPressedMessage args)
+    {
+        _ftlDrive.TryToStartupFTLDrive(ent);
     }
 
     private void OnFTLCompleted(Entity<ShuttleFTLDriveComponent> ent, ref FTLCompletedEvent args)

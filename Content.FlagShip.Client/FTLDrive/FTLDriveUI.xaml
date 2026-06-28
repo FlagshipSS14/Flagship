@@ -38,23 +38,6 @@
                 </BoxContainer>
             </BoxContainer>
 
-            <!-- The bars -->
-            <BoxContainer Orientation="Horizontal" Margin="5 40 5 40" MinHeight="50" HorizontalAlignment="Right">
-                <controls:StripeBack>
-                    <BoxContainer Orientation="Horizontal" MinHeight="50" HorizontalAlignment="Right">
-                        <BoxContainer Orientation="Vertical">
-                            <RichTextLabel Text="{Loc 'ftl-menu-bar-heat'}" HorizontalAlignment="Center"></RichTextLabel>
-                            <ProgressBar Access="Public" Name="DriveHeatLevel" MaxValue="1" Margin="10" Vertical="True" MinWidth="75" VerticalExpand="True"/>
-                        </BoxContainer>
-
-                        <BoxContainer Orientation="Vertical">
-                            <RichTextLabel Text="{Loc 'ftl-menu-bar-charge'}" HorizontalAlignment="Center"></RichTextLabel>
-                            <ProgressBar Access="Public" Name="DriveChargeLevel" MaxValue="1" Margin="10" Vertical="True" MinWidth="75" VerticalExpand="True"/>
-                        </BoxContainer>
-                    </BoxContainer>
-                </controls:StripeBack>
-            </BoxContainer>
-
         </PanelContainer>
     </BoxContainer>
 
@@ -66,7 +49,7 @@
     <!-- Bottom Right -->
     <BoxContainer Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 20 30">
         <BoxContainer Orientation="Horizontal">
-            <Button Access="Public" Name="StartDriveButton" MinSize="300 50" Text="ENGAGE DRIVE"></Button>
+            <Button Access="Public" Name="StartDriveButton" MinSize="300 50" Text="TOGGLE DRIVE"></Button>
         </BoxContainer>
     </BoxContainer>
 
