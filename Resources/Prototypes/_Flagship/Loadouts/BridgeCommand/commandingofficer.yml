@@ -1,0 +1,53 @@
+# Jumpsuit
+- type: loadout
+  id: CommandingOfficerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineer
+
+- type: loadout
+  id: CommandingOfficerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineer
+
+- type: loadout
+  id: CommandingOfficerTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
+
+- type: loadout
+  id: CommandingOfficerTurtleneckSkirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineerTurtle
+
+# Head
+- type: loadout
+  id: CommandingOfficerHead
+  equipment:
+    head: ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: CommandingOfficerBeret
+  startingGear: EngineeringBeret
+
+# Neck
+- type: loadout
+  id: CommandingOfficerCloak
+  equipment:
+    neck: ClothingNeckCloakCe
+
+- type: startingGear
+  id: CommandingOfficerMantle
+  equipment:
+    neck: ClothingNeckMantleCE
+
+# OuterClothing
+- type: loadout
+  id: CommandingOfficerWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCE
+
+# Shoes
+- type: loadout
+  id: CommandingOfficerBrownShoes
+  equipment:
+    shoes: ClothingShoesColorBrown
