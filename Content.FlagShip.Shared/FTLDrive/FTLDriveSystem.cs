@@ -2,6 +2,7 @@ using Content.FlagShip.Common.FTLDrive;
 using Content.Shared.Audio;
 using Content.Shared.Explosion.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
@@ -15,12 +16,13 @@ public sealed partial class FTLDriveSystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedExplosionSystem _explosion = default!;
     [Dependency] private SharedPowerStateSystem _powerState = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<FTLDriveComponent, ActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<ShuttleFTLDriveComponent, GetFTLDriveRangeEvent>(OnGetRange);
+        SubscribeLocalEvent<FTLDriveComponent, FTLChargeButtonPressedMessage>(OnButtonPressed);
     }
 
     public override void Update(float frameTime)
@@ -31,6 +33,9 @@ public sealed partial class FTLDriveSystem : EntitySystem
         var query = EntityQueryEnumerator<ActiveFTLDriveComponent, FTLDriveComponent>();
         while (query.MoveNext(out var uid, out _, out var drive))
         {
+            var data = new FTLDriveBuiState(GetDriveStatus(uid));
+            _ui.SetUiState(uid, FTLDriveUiKey.Key, data);
+
             if (drive.State == FTLDriveState.Engaged && curTime > drive.EngagedBreakdownTime)
                 BreakDownFTLDrive((uid, drive));
 
@@ -38,15 +43,14 @@ public sealed partial class FTLDriveSystem : EntitySystem
                 FinishChargingFTLDrive((uid, drive));
         }
     }
+    private void OnButtonPressed(Entity<FTLDriveComponent> ent, ref FTLChargeButtonPressedMessage args)
+    {
+        TryToStartupFTLDrive(ent);
+    }
 
     private void OnGetRange(Entity<ShuttleFTLDriveComponent> ent, ref GetFTLDriveRangeEvent args)
     {
         args.Range = ent.Comp.Range;
-    }
-
-    private void OnInteract(Entity<FTLDriveComponent> ent, ref ActivateInWorldEvent args)
-    {
-        TryToStartupFTLDrive(ent);
     }
 
     public void TryToStartupFTLDrive(Entity<FTLDriveComponent> ent)
@@ -78,6 +82,7 @@ public sealed partial class FTLDriveSystem : EntitySystem
 
         _appearance.SetData(ent.Owner, FTLDriveVisuals.Active, true);
 
+        Dirty(ent);
         EnsureComp<ActiveFTLDriveComponent>(ent.Owner);
     }
 
@@ -158,4 +163,35 @@ public sealed partial class FTLDriveSystem : EntitySystem
         ShutDownFTLDrive(ent, ent.Comp.CoolDownTimeBreakDown);
         _explosion.QueueExplosion(ent.Owner, ent.Comp.ExplosionType, ent.Comp.TotalIntensity, ent.Comp.IntensitySlope, ent.Comp.MaxTileBreak, canCreateVacuum:true);
     }
+
+    public FTLDriveStatsData GetDriveStats(EntityUid uid)
+    {
+        var data = new FTLDriveStatsData();
+
+        if (!TryComp<FTLDriveComponent>(uid, out var drive))
+            return data;
+
+        data.State = drive.State;
+        data.CoolDown = drive.CoolDownTime;
+        data.Range = drive.Range;
+        data.StableTime = drive.StableEngagedTime;
+        data.StartUp = drive.StartUpTime;
+
+        return data;
+    }
+
+    public FTLDriveData GetDriveStatus(EntityUid uid)
+    {
+        var data = new FTLDriveData();
+
+        if (!TryComp<FTLDriveComponent>(uid, out var drive))
+            return data;
+
+        data.State = drive.State;
+        data.CoolDownFinishedTime = drive.CoolDownFinishedTime - _timing.CurTime;
+        data.CoolDownFailureTime = drive.EngagedBreakdownTime - _timing.CurTime;
+
+        return data;
+    }
+
 }

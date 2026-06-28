@@ -40,8 +40,15 @@
   - type: ApcPowerReceiver
     powerLoad: 150
   - type: PowerState
-    idlePowerDraw: 150
-    workingPowerDraw: 1000
+    idlePowerDraw: 50
+    workingPowerDraw: 5000
+  - type: ActivatableUI
+    key: enum.FTLDriveUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.FTLDriveUiKey.Key:
+        type: FTLDriveBoundUserInterface
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:

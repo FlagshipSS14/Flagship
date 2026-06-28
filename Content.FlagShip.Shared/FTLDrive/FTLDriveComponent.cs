@@ -110,6 +110,18 @@ public enum FTLDriveVisuals : byte
 }
 
 [Serializable, NetSerializable]
+public enum FTLDriveUiKey : byte
+{
+    Key,
+}
+
+[Serializable, NetSerializable]
+public record struct FTLDriveStatsData(FTLDriveState State, float Range, TimeSpan CoolDown, TimeSpan StableTime, TimeSpan StartUp, bool ShowCoolDown, bool ShowCoolingFailure);
+
+[Serializable, NetSerializable]
+public record struct FTLDriveData(FTLDriveState State, float PowerDraw, TimeSpan CoolDownFinishedTime, TimeSpan CoolDownFailureTime);
+
+[Serializable, NetSerializable]
 public enum FTLDriveState : byte
 {
     Idle,
@@ -117,3 +129,12 @@ public enum FTLDriveState : byte
     Engaged,
     InWarp,
 }
+
+[Serializable, NetSerializable]
+public sealed class FTLDriveBuiState(FTLDriveData driveData) : BoundUserInterfaceState
+{
+    public readonly FTLDriveData DriveData = driveData;
+}
+
+[Serializable, NetSerializable]
+public sealed class FTLChargeButtonPressedMessage : BoundUserInterfaceMessage;
