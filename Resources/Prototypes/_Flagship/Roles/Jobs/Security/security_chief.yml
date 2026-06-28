@@ -14,6 +14,9 @@
   displayWeight: 100
   accessGroups:
   - Command
+  special:
+  - !type:AddImplantSpecial
+     implants: [ MindShieldImplant ]
 
 # Flagship
 # PLEASE RESPECT THE EQUIPMENT ORDER OR I WILL STEAL YOUR NOSE
@@ -21,15 +24,18 @@
 - type: startingGear
   id: MPChiefGear
   equipment:
-    id: HoSPDA
-    head: ClothingHeadHatBeretHoS
-    eyes: ClothingEyesGlassesSecurity
-    ears: ClothingHeadsetAltSecurity
+    id: MilitaryPoliceChiefPDA
+    head: ClothingHeadHatBeretMilitaryPoliceChief
+    eyes: ClothingEyesGlassesMilitaryPolice
+    ears: ClothingHeadsetAltMilitaryPolice
     mask: ClothingMaskNeckGaiter
     neck: SecurityWhistle
     outerClothing: ClothingOuterArmorBasic
     jumpsuit: ClothingUniformJumpsuitMilitaryPoliceOfficer
     gloves: ClothingHandsGlovesCombat
-    back: ClothingBackpackSecurity
-    belt: ClothingBeltSecurityWebbingFilled
+    back: ClothingBackpackMilitaryPolice
+    belt: ClothingBeltMilitaryPoliceWebbingFilled
     shoes: ClothingShoesBootsCombatFilled
+  storage:
+    belt:
+    - Flash

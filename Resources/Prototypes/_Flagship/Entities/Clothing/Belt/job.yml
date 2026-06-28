@@ -1,0 +1,141 @@
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSecurityContraband]
+  id: ClothingBeltMilitaryPolice
+  name: Military Police belt
+  description: Can hold military police gear like handcuffs and flashes.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Belt/militarypolice.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Belt/militarypolice.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Storage
+    whitelist:
+      tags:
+      - CigPack
+      - Taser
+      - SecBeltEquip
+      - Radio
+      - Sidearm
+      - MagazinePistol
+      - MagazineMagnum
+      - CombatKnife
+      - Truncheon
+      - HandGrenade
+      components:
+      - Stunbaton
+      - FlashOnTrigger
+      - SmokeOnTrigger
+      - Flash
+      - Handcuff
+      - BallisticAmmoProvider
+      - CartridgeAmmo
+      - DoorRemote
+      - Whistle
+      - BalloonPopper
+  - type: ItemMapper
+    sprite: &BeltOverlay _Flagship/Clothing/Belt/belt_overlay.rsi
+    mapLayers:
+      flashbang:
+        whitelist:
+          components:
+          - FlashOnTrigger
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+      tear_gas_grenade:
+        whitelist:
+          components:
+          - SmokeOnTrigger
+  - type: Appearance
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSecurityContraband]
+  id: ClothingBeltMilitaryPoliceMedic
+  name: Military Police Medic belt
+  description: Can hold military police gear like handcuffs and flashes, but also Medical gear.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Belt/militarypolicemedic.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Belt/militarypolicemedic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Storage
+    whitelist:
+      tags:
+      - CigPack
+      - Taser
+      - SecBeltEquip
+      - Radio
+      - Sidearm
+      - MagazinePistol
+      - MagazineMagnum
+      - CombatKnife
+      - Truncheon
+      - HandGrenade
+      - Wrench
+      - Bottle
+      - Spray
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - Tourniquet
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - SurgeryTool
+      - Dropper
+      - Medkit
+      components:
+      - Stunbaton
+      - FlashOnTrigger
+      - SmokeOnTrigger
+      - Flash
+      - Handcuff
+      - BallisticAmmoProvider
+      - CartridgeAmmo
+      - DoorRemote
+      - Whistle
+      - BalloonPopper
+      - Injector
+      - Pill
+      - HandLabeler
+  - type: ItemMapper
+    sprite: *BeltOverlay
+    mapLayers:
+      bottle:
+        whitelist:
+          tags:
+          - Bottle
+      hypo:
+        whitelist:
+          tags:
+          - Hypospray
+      pill:
+        whitelist:
+          components:
+          - Pill
+          tags:
+          - PillCanister
+      bottle_spray:
+        whitelist:
+          tags:
+          - Spray
+      # spray_med:
+      #   whitelist:
+      #     tags:
+      #     - SprayMedical
+      # wrench_medical:
+      #   whitelist:
+      #     tags:
+      #     - WrenchMedical
+      wrench:
+        whitelist:
+          tags:
+          - Wrench
+  - type: Appearance

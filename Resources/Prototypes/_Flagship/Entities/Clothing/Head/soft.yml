@@ -13,3 +13,14 @@
   parent: [ ClothingHeadHeadHatBaseFlipped, ClothingHeadHatBridgeEnsignSoft ]
   id: ClothingHeadHatBridgeEnsignSoftFlipped
   name: Bridge Ensign cap
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatMilitaryPoliceTrainee
+  name: Military Police Trainee cap
+  description: A baseball cap colored to match military polices' uniforms.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Soft/militarypolicetrainee.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Soft/militarypolicetrainee.rsi

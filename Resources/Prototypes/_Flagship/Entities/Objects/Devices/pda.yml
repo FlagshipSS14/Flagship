@@ -293,3 +293,101 @@
     borderColor: "#102e46"
   - type: Icon
     state: pda-bridgecommand
+
+# Military Police
+
+- type: entity
+  parent: BaseFlagPDA
+  id: MilitaryPoliceChiefPDA
+  name: Military Police Chief's PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: MilitaryPoliceChiefIDCard
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-militarypolice
+  - type: PdaBorderColor
+    borderColor: "#102e46"
+  - type: Icon
+    state: pda-militarypolice
+
+- type: entity
+  parent: BaseFlagPDA
+  id: MilitaryPoliceMedicPDA
+  name: Military Police Medic's PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: MilitaryPoliceMedicIDCard
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-militarypolice
+  - type: PdaBorderColor
+    borderColor: "#102e46"
+  - type: Icon
+    state: pda-militarypolice
+
+- type: entity
+  parent: BaseFlagPDA
+  id: MilitaryPoliceOfficerPDA
+  name: Military Police Officer's PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: MilitaryPoliceOfficerIDCard
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-militarypolice
+  - type: PdaBorderColor
+    borderColor: "#102e46"
+  - type: Icon
+    state: pda-militarypolice
+
+- type: entity
+  parent: BaseFlagPDA
+  id: MilitaryPoliceTraineePDA
+  name: Military Police Trainee's PDA
+  description: Surprisingly no different from your PDA.
+  components:
+  - type: Pda
+    id: MilitaryPoliceTraineeIDCard
+    penSlot:
+      startingItem: PenCap
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-militarypolice
+  - type: PdaBorderColor
+    borderColor: "#102e46"
+  - type: Icon
+    state: pda-militarypolice

@@ -31,6 +31,9 @@
             "name": "pda-commandingofficer"
         },
         {
+            "name": "pda-militarypolice"
+        },
+        {
             "name": "pda"
         }
     ]

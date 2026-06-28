@@ -134,6 +134,36 @@
     sprite: _Flagship/Clothing/Ears/Headsets/bridgecommand.rsi
 
 # Military Police
+- type: entity
+  parent: ClothingHeadsetFlag
+  id: ClothingHeadsetMilitaryPolice
+  name: Military Police's headset
+  description: Headset used by grunts of the Military Police.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMilitaryPolice
+  - type: Sprite
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolice.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolice.rsi
+
+- type: entity
+  parent: ClothingHeadsetFlag
+  id: ClothingHeadsetMilitaryPoliceMedic
+  name: Military Police's medic headset
+  description: Headset used by medics of the Military Police.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMilitaryPolice
+      - EncryptionKeyFlagMedical
+  - type: Sprite
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
 
 # Science
 

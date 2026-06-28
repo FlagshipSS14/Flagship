@@ -1,3 +1,4 @@
+# Bridge Command
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCommandingOfficer
@@ -48,6 +49,61 @@
   - type: Tag
     tags:
     - ClothMade
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+# Military Police
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretMilitaryPoliceChief
+  name: Military Police Chief beret
+  description: A beret worn by Military Police Chiefs of the Nanotrasen Navy Corps.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/militarypolicechiefberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/militarypolicechiefberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretMilitaryPoliceMedic
+  name: Military Police Medic beret
+  description: A beret worn by Military Police Medics of the Nanotrasen Navy Corps.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/militarypolicemedicberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/militarypolicemedicberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretMilitaryPolice
+  name: Military Police beret
+  description: A beret worn by Military Police grunts of the Nanotrasen Navy Corps.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/militarypoliceberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/militarypoliceberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
     - WhitelistChameleon
     - PetWearable
     - CorgiWearable
