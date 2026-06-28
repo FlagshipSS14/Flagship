@@ -18,19 +18,20 @@
   extendedAccess:
   - Chemistry
 
+# Flagship
+# PLEASE RESPECT THE EQUIPMENT ORDER OR I WILL STEAL YOUR NOSE
+# equipment: id, head, eyes, ears, mask, neck, outerClothing, jumpsuit, gloves, back, belt, shoes
 - type: startingGear
   id: ParamedicalSpecialistGear
   equipment:
     id: ParamedicPDA
-    ears: ClothingHeadsetCommandingOfficer
-
-- type: chameleonOutfit
-  id: ParamedicalSpecialistChameleonOutfit
-  job: ParamedicalSpecialist
-  equipment:
     head: ClothingHeadHatParamedicsoft
     eyes: ClothingEyesHudMedical
+    ears: ClothingHeadsetMedical
     mask: ClothingMaskSterile
-    neck: ClothingNeckStethoscope
+    jumpsuit: ClothingUniformJumpsuitFlagMedicalDoctor
     outerClothing: ClothingOuterCoatParamedicWB
-    gloves: ClothingHandsGlovesLatex
+    gloves: ClothingHandsGlovesNitrile
+    back: ClothingBackpackMedical
+    belt: ClothingBeltMedicalEMT
+    shoes: ClothingShoesColorWhite

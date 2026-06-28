@@ -15,11 +15,21 @@
   accessGroups:
   - Command
 
+# Flagship
+# PLEASE RESPECT THE EQUIPMENT ORDER OR I WILL STEAL YOUR NOSE
+# equipment: id, head, eyes, ears, mask, neck, outerClothing, jumpsuit, gloves, back, belt, shoes
 - type: startingGear
   id: MPOfficerGear
   equipment:
-    shoes: ClothingShoesBootsJack
-    id: HoSPDA
-    ears: ClothingHeadsetCommandingOfficer
-    belt: ClothingBeltSecurity
-    uniform: ClothingUniformJumpsuitSec
+    id: SecurityPDA
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetSecurity
+    mask: ClothingMaskNeckGaiter
+    neck: SecurityWhistle
+    outerClothing: ClothingOuterArmorBasic
+    jumpsuit: ClothingUniformJumpsuitMilitaryPoliceOfficer
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingBackpackSecurity
+    belt: ClothingBeltSecurityWebbingFilled
+    shoes: ClothingShoesBootsCombatFilled
