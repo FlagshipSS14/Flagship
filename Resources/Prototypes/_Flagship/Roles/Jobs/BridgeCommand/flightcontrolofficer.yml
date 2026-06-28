@@ -4,6 +4,7 @@
   description: job-description-flightcontrolofficer
   playTimeTracker: JobFlightControlOfficer
   setPreference: true
+  setRankPreference: true
   supervisors: job-supervisors-coxo
   requireAdminNotify: true
   requirements:

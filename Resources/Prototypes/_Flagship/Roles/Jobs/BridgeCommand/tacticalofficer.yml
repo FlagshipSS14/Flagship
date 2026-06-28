@@ -3,7 +3,8 @@
   name: job-name-tacticalofficer
   description: job-description-tacticalofficer
   playTimeTracker: JobTacticalOfficer
-  setPreference: true # Frontier
+  setPreference: true
+  setRankPreference: true
   supervisors: job-supervisors-coxo
   requireAdminNotify: true
   requirements:
