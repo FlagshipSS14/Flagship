@@ -59,6 +59,8 @@
         core_active:
           True: { visible: true }
           False: { visible: false }
+  - type: Anchorable
+    delay: 30
   - type: Fixtures
     fixtures:
       fix1:
