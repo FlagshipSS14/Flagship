@@ -29,14 +29,8 @@ public sealed partial class FTLDriveBoundUserInterface : BoundUserInterface
             SendMessage(new FTLChargeButtonPressedMessage());
         };
 
-        var breakDownSeconds = Math.Clamp(stats.CoolDownFailureTime.Seconds, 0, 999);
-        var breakDownMinutes = Math.Clamp(stats.CoolDownFailureTime.Minutes, 0, 999);
-
-        var coolDownSeconds = Math.Clamp(stats.CoolDownFinishedTime.Seconds, 0, 999);
-        var coolDownMinutes = Math.Clamp(stats.CoolDownFinishedTime.Minutes, 0, 999);
-
-        var formattedBreakDown = string.Format("{0:00}:{1:00}", breakDownMinutes, breakDownSeconds);
-        var formattedCoolDown = string.Format("{0:00}:{1:00}", coolDownMinutes, coolDownSeconds);
+        var formattedBreakDown = GetFormatted(stats.CoolDownFailureTime.Seconds, stats.CoolDownFailureTime.Minutes);
+        var formattedCoolDown = GetFormatted(stats.CoolDownFinishedTime.Seconds, stats.CoolDownFinishedTime.Minutes);
 
         _menu.StatusText.Text = Loc.GetString("ftl-menu-status", ("Status", stats.State.ToString().ToUpper()));
         _menu.StatsRange.Text = Loc.GetString("ftl-menu-range", ("Range", stats.Range));
@@ -56,21 +50,21 @@ public sealed partial class FTLDriveBoundUserInterface : BoundUserInterface
             return;
 
         // Do rounding and clamp and formatting.
-
-        var breakDownSeconds = Math.Clamp(status.DriveData.CoolDownFailureTime.Seconds, 0, 999);
-        var breakDownMinutes = Math.Clamp(status.DriveData.CoolDownFailureTime.Minutes, 0, 999);
-
-        var coolDownSeconds = Math.Clamp(status.DriveData.CoolDownFinishedTime.Seconds, 0, 999);
-        var coolDownMinutes = Math.Clamp(status.DriveData.CoolDownFinishedTime.Minutes, 0, 999);
-
-        var formattedBreakDown = string.Format("{0:00}:{1:00}", breakDownMinutes, breakDownSeconds);
-        var formattedCoolDown = string.Format("{0:00}:{1:00}", coolDownMinutes, coolDownSeconds);
+        var formattedBreakDown = GetFormatted(status.DriveData.CoolDownFailureTime.Seconds, status.DriveData.CoolDownFailureTime.Minutes);
+        var formattedCoolDown = GetFormatted(status.DriveData.CoolDownFinishedTime.Seconds, status.DriveData.CoolDownFinishedTime.Minutes);
 
         // Set the UI text
-
         _menu.StatusText.Text = Loc.GetString("ftl-menu-status", ("Status", status.DriveData.State.ToString().ToUpper()));
         _menu.CoolDownTimeLeft.Text = Loc.GetString("ftl-menu-cooldown-time", ("FinishedTime", formattedCoolDown));
         _menu.TimeTillCoolFailure.Text = Loc.GetString("ftl-menu-cooling-failure", ("FailTime", formattedBreakDown));
         _menu.CurrentPowerDraw.Text = Loc.GetString("ftl-menu-power-draw", ("Draw", status.DriveData.PowerDraw));
+    }
+
+    private string GetFormatted(float seconds, float minutes)
+    {
+        var breakDownSeconds = Math.Clamp(seconds, 0, 999);
+        var breakDownMinutes = Math.Clamp(minutes, 0, 999);
+
+        return string.Format("{0:00}:{1:00}", breakDownMinutes, breakDownSeconds);
     }
 }
