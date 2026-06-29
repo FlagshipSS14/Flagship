@@ -46,6 +46,7 @@ public sealed partial class ServerFTLDriveSystem : EntitySystem
                 _ftlDrive.FinishChargingFTLDrive((uid, drive));
         }
 
+        // Set the UI status
         var query2 = EntityQueryEnumerator<FTLDriveComponent>();
         while (query2.MoveNext(out var uid, out _))
         {
@@ -56,7 +57,7 @@ public sealed partial class ServerFTLDriveSystem : EntitySystem
 
     private void OnButtonPressed(Entity<FTLDriveComponent> ent, ref FTLChargeButtonPressedMessage args)
     {
-        _ftlDrive.TryToStartupFTLDrive(ent);
+        _ftlDrive.TryToggleFTLDrive(ent);
     }
 
     private void OnFTLCompleted(Entity<ShuttleFTLDriveComponent> ent, ref FTLCompletedEvent args)

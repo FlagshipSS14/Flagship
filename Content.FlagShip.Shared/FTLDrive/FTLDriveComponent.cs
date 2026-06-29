@@ -15,6 +15,9 @@ public sealed partial class FTLDriveComponent : Component
     [DataField, AutoNetworkedField]
     public float Range = 5000;
 
+    /// <summary>
+    /// The current state of the FTL drive
+    /// </summary>
     [DataField, AutoNetworkedField]
     public FTLDriveState State;
 
@@ -128,12 +131,6 @@ public enum FTLDriveUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public record struct FTLDriveStatsData(FTLDriveState State, float Range, TimeSpan CoolDown, TimeSpan StableTime, TimeSpan StartUp, bool ShowCoolDown, bool ShowCoolingFailure);
-
-[Serializable, NetSerializable]
-public record struct FTLDriveData(FTLDriveState State, float PowerDraw, TimeSpan CoolDownFinishedTime, TimeSpan CoolDownFailureTime);
-
-[Serializable, NetSerializable]
 public enum FTLDriveState : byte
 {
     Idle,
@@ -141,12 +138,3 @@ public enum FTLDriveState : byte
     Engaged,
     InWarp,
 }
-
-[Serializable, NetSerializable]
-public sealed class FTLDriveBuiState(FTLDriveData driveData) : BoundUserInterfaceState
-{
-    public readonly FTLDriveData DriveData = driveData;
-}
-
-[Serializable, NetSerializable]
-public sealed class FTLChargeButtonPressedMessage : BoundUserInterfaceMessage;

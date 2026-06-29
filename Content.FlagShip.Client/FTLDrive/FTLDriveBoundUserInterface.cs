@@ -43,6 +43,8 @@ public sealed partial class FTLDriveBoundUserInterface : BoundUserInterface
         if (_menu is null || state is not FTLDriveBuiState status)
             return;
 
+        // Do rounding and clamp and formatting.
+
         var breakDownSeconds = MathF.Round(status.DriveData.CoolDownFailureTime.Seconds, 2);
         var breakDownMinutes = MathF.Round(status.DriveData.CoolDownFailureTime.Minutes, 2);
 
@@ -58,6 +60,8 @@ public sealed partial class FTLDriveBoundUserInterface : BoundUserInterface
         coolDownMinutes = Math.Clamp(coolDownMinutes, 0, 99999);
 
         var formattedCoolDown = string.Format("{0:00}:{1:00}", coolDownMinutes, coolDownSeconds);
+
+        // Set the UI text
 
         _menu.StatusText.Text = Loc.GetString("ftl-menu-status", ("Status", status.DriveData.State.ToString().ToUpper()));
         _menu.CoolDownTimeLeft.Text = Loc.GetString("ftl-menu-cooldown-time", ("FinishedTime", formattedCoolDown));

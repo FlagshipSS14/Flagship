@@ -37,7 +37,11 @@ public sealed partial class FTLDriveSystem : EntitySystem
         ent.Comp.NextPowerCheckTime = _timing.CurTime + ent.Comp.PowerGracePeriod;
     }
 
-    public void TryToStartupFTLDrive(Entity<FTLDriveComponent> ent)
+    /// <summary>
+    /// Tries to start the ftl drive fails if the state is incorrect or the drive is still cooling down, turns off the drive if it's already on.
+    /// </summary>
+    /// <param name="ent">FTL Drive entity</param>
+    public void TryToggleFTLDrive(Entity<FTLDriveComponent> ent)
     {
         if (ent.Comp.State is not FTLDriveState.Idle && ent.Comp.State is not FTLDriveState.Engaged)
             return;
@@ -54,7 +58,7 @@ public sealed partial class FTLDriveSystem : EntitySystem
         StartUpFTLDrive(ent);
     }
 
-    public void StartUpFTLDrive(Entity<FTLDriveComponent> ent)
+    private void StartUpFTLDrive(Entity<FTLDriveComponent> ent)
     {
         if (ent.Comp.SoundEntity is not null)
             _audio.Stop(ent.Comp.SoundEntity);
@@ -72,6 +76,11 @@ public sealed partial class FTLDriveSystem : EntitySystem
         EnsureComp<ActiveFTLDriveComponent>(ent.Owner);
     }
 
+    /// <summary>
+    /// Shuts down the FTL drive
+    /// </summary>
+    /// <param name="ent">The drive entity</param>
+    /// <param name="coolDownTime">How long should the cooldown be</param>
     public void ShutDownFTLDrive(Entity<FTLDriveComponent> ent, TimeSpan coolDownTime)
     {
         _powerState.SetWorkingState(ent.Owner, false);
@@ -110,6 +119,10 @@ public sealed partial class FTLDriveSystem : EntitySystem
         RemComp<ActiveFTLDriveComponent>(ent.Owner);
     }
 
+    /// <summary>
+    /// Called when the FTL drive finishes charging, switches the state and adds <see cref="FTLDriveComponent.EngagedComponents"/>
+    /// </summary>
+    /// <param name="ent">Drive entity</param>
     public void FinishChargingFTLDrive(Entity<FTLDriveComponent> ent)
     {
         ent.Comp.State = FTLDriveState.Engaged;
@@ -144,6 +157,10 @@ public sealed partial class FTLDriveSystem : EntitySystem
         ent.Comp.EngagedBreakdownTime = _timing.CurTime + ent.Comp.StableEngagedTime;
     }
 
+    /// <summary>
+    /// Shuts down the FTL drive with <see cref="FTLDriveComponent.CoolDownTimeBreakDown"/> cooldown time and causes an explosion.
+    /// </summary>
+    /// <param name="ent">Drive entity</param>
     public void BreakDownFTLDrive(Entity<FTLDriveComponent> ent)
     {
         if (ent.Comp.State is not FTLDriveState.Engaged)
@@ -153,6 +170,11 @@ public sealed partial class FTLDriveSystem : EntitySystem
         _explosion.QueueExplosion(ent.Owner, ent.Comp.ExplosionType, ent.Comp.TotalIntensity, ent.Comp.IntensitySlope, ent.Comp.MaxTileBreak, canCreateVacuum:true);
     }
 
+    /// <summary>
+    /// Returns the current stats of an FTL drive, returns new FTLDriveStatsData if the entity has no  FTLDriveComponent.
+    /// </summary>
+    /// <param name="uid">The entity to check</param>
+    /// <returns></returns>
     public FTLDriveStatsData GetDriveStats(EntityUid uid)
     {
         var data = new FTLDriveStatsData();
@@ -169,6 +191,11 @@ public sealed partial class FTLDriveSystem : EntitySystem
         return data;
     }
 
+    /// <summary>
+    /// Returns the current status of a FTL drive, this is used for the UI
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <returns></returns>
     public FTLDriveData GetDriveStatus(EntityUid uid)
     {
         var data = new FTLDriveData();
