@@ -13,6 +13,9 @@ public sealed partial class ServerFTLDriveSystem : EntitySystem
     [Dependency] private FTLDriveSystem _ftlDrive = default!;
     [Dependency] private PowerReceiverSystem _power = default!;
 
+    private TimeSpan _nextUiUpdate = TimeSpan.Zero;
+    private readonly TimeSpan _uiUpdateInterval = TimeSpan.FromMilliseconds(500); // every half a second
+
     public override void Initialize()
     {
         base.Initialize();
@@ -45,6 +48,11 @@ public sealed partial class ServerFTLDriveSystem : EntitySystem
             if (drive.State == FTLDriveState.Charging && curTime > drive.StartUpFinishTime)
                 _ftlDrive.FinishChargingFTLDrive((uid, drive));
         }
+
+        if (curTime < _nextUiUpdate)
+            return;
+
+        _nextUiUpdate = curTime + _uiUpdateInterval;
 
         // Set the UI status
         var query2 = EntityQueryEnumerator<FTLDriveComponent>();

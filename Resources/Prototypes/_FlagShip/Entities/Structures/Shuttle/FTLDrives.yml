@@ -41,7 +41,7 @@
     powerLoad: 50
   - type: PowerState
     idlePowerDraw: 50
-    workingPowerDraw: 2500
+    workingPowerDraw: 5000
   - type: ActivatableUI
     key: enum.FTLDriveUiKey.Key
   - type: ActivatableUIRequiresPower

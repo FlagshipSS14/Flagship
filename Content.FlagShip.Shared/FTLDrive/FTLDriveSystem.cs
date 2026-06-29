@@ -187,6 +187,16 @@ public sealed partial class FTLDriveSystem : EntitySystem
         data.Range = drive.Range;
         data.StableTime = drive.StableEngagedTime;
         data.StartUp = drive.StartUpTime;
+        data.CoolDownFinishedTime = drive.CoolDownFinishedTime - _timing.CurTime;
+        data.CoolDownFailureTime = drive.EngagedBreakdownTime - _timing.CurTime;
+
+        if (TryComp<PowerStateComponent>(uid, out var power))
+        {
+            if (power.IsWorking)
+                data.PowerDraw = power.WorkingPowerDraw;
+            else
+                data.PowerDraw = power.IdlePowerDraw;
+        }
 
         return data;
     }
