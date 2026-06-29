@@ -38,7 +38,7 @@
     sound:
       path: /Audio/_FlagShip/Effects/Shuttle/FTL_drive_hum.ogg
   - type: ApcPowerReceiver
-    powerLoad: 150
+    powerLoad: 50
   - type: PowerState
     idlePowerDraw: 50
     workingPowerDraw: 2500
