@@ -25,10 +25,10 @@
   id: ArtillerySpecialistGear
   equipment:
     id: CargoPDA
-    head: ClothingHeadHatBeretFrench
+    head: ClothingHeadHatBeretArtillerySpecialist
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetCargo
-    jumpsuit: ClothingUniformJumpsuitSuppliesCrewman
+    ears: ClothingHeadsetArtillerySpecialist
+    jumpsuit: ClothingUniformJumpsuitArtillerySpecialist
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltUtilityFilled

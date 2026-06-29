@@ -2,7 +2,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCommandingOfficer
-  name: Commanding Officer's service uniform
+  name: Commanding Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Commanding Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -13,7 +13,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitExecutiveOfficer
-  name: Executive Officer's service uniform
+  name: Executive Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Executive Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -24,7 +24,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitTacticalOfficer
-  name: Tactical Officer's service uniform
+  name: Tactical Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Tactical Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -35,7 +35,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitOperationsOfficer
-  name: Operations Officer's service uniform
+  name: Operations Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Operations Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitBridgeCommand
-  name: Bridge Officer's service uniform
+  name: Bridge Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Bridge Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -58,7 +58,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMilitaryPoliceOfficer
-  name: Military Police Officer's service uniform
+  name: Military Police Officer service uniform
   description: A stylish yet simple uniform made specifically to be worn by Military Police Officers of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -70,7 +70,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMaintenanceTechnician
-  name: Maintenance Technician's service uniform
+  name: Maintenance Technician service uniform
   description: A stylish yet simple uniform made specifically to be worn by Maintenance Technicians of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -82,7 +82,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSuppliesCrewman
-  name: Supplies Crewman's service uniform
+  name: Supplies Crewman service uniform
   description: A stylish yet simple uniform made specifically to be worn by Supplies Crewmen of Nanotrasen's Naval Corps.
   components:
   - type: Sprite
@@ -90,11 +90,22 @@
   - type: Clothing
     sprite: _Flagship/Clothing/Uniforms/Jumpsuit/supplies.rsi
 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitArtillerySpecialist
+  name: Artillery Specialist service uniform
+  description: A stylish yet simple uniform made specifically to be worn by Artillery Specialists of Nanotrasen's Naval Corps.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Uniforms/Jumpsuit/artilleryspecialist.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Uniforms/Jumpsuit/artilleryspecialist.rsi
+
 # Science
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitFlagScientist
-  name: Scientist's service uniform
+  name: Scientist service uniform
   description: A stylish yet simple uniform made specifically to be worn by Scientists of Nanotrasen's Naval Corps.
   components:
   - type: Sprite

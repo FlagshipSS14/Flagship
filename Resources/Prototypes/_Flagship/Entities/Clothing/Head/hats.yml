@@ -107,3 +107,40 @@
     - WhitelistChameleon
     - PetWearable
     - CorgiWearable
+
+# Supplies
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretSuppliesQuartermaster
+  name: Supplies Quartermaster beret
+  description: A beret worn by the Supply Quartermaster of a Nanotrasen Flagship.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/suppliesquartermasterberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/suppliesquartermasterberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretArtillerySpecialist
+  name: Artillery Specialist beret
+  description: A beret worn by Artillery Specialists in Nanotrasen combat vessels.
+  components:
+  - type: Sprite
+    sprite: _Flagship/Clothing/Head/Hats/artilleryspecialistberet.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Head/Hats/artilleryspecialistberet.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+    - PetWearable
+    - CorgiWearable

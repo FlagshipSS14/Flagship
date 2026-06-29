@@ -26,9 +26,9 @@
   id: SuppliesQuartermasterGear
   equipment:
     id: QuartermasterPDA
-    head: ClothingHeadHatBeretQM
+    head: ClothingHeadHatBeretSuppliesQuartermaster
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetQM
+    ears: ClothingHeadsetSuppliesQuartermaster
     jumpsuit: ClothingUniformJumpsuitSuppliesCrewman
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSatchelLeather

@@ -25,8 +25,8 @@
   id: SuppliesCrewmanGear
   equipment:
     id: CargoPDA
-    head: ClothingHeadHatCargosoft
-    ears: ClothingHeadsetCargo
+    head: ClothingHeadHatSuppliesCrewman
+    ears: ClothingHeadsetSupplies
     jumpsuit: ClothingUniformJumpsuitSuppliesCrewman
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSatchelLeather
