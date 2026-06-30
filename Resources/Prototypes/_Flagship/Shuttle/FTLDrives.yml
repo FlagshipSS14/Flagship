@@ -6,7 +6,7 @@
   description: A revolutionary ship hyperdrive system manufactured by Nanotrasen that allows for faster than light travel within a sector.
   components:
   - type: Sprite
-    sprite: _FlagShip/Structures/Machines/FTL_Drive.rsi
+    sprite: _Flagship/Structures/Machines/FTL_Drive.rsi
     layers:
     - state: core_idle
     - state: core_active
