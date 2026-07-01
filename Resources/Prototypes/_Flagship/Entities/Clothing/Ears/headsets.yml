@@ -200,22 +200,6 @@
 # Supply
 - type: entity
   parent: ClothingHeadsetFlag
-  id: ClothingHeadsetSuppliesQuartermaster
-  name: Supplies Quartermaster headset
-  description: Headset used by Supplies Quartermasters.
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeySupplies
-      - EncryptionKeyTactical
-  - type: Sprite
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
-  - type: Clothing
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
-
-- type: entity
-  parent: ClothingHeadsetFlag
   id: ClothingHeadsetArtillerySpecialist
   name: Artillery Specialist headset
   description: Headset used by Artillery Specialists.
@@ -226,9 +210,9 @@
       - EncryptionKeySupplies
       - EncryptionKeyTactical
   - type: Sprite
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
   - type: Clothing
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
 
 - type: entity
   parent: ClothingHeadsetFlag
@@ -241,9 +225,9 @@
       key_slots:
       - EncryptionKeySupplies
   - type: Sprite
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
   - type: Clothing
-    sprite: _Flagship/Clothing/Ears/Headsets/militarypolicemedic.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
 
 # Medical
 - type: entity
