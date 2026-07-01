@@ -4,6 +4,7 @@
   description: job-description-operationsofficer
   playTimeTracker: JobOperationsOfficer
   setPreference: true
+  setRankPreference: true
   supervisors: job-supervisors-coxo
   requireAdminNotify: true
   requirements:

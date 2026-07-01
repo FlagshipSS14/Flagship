@@ -4,6 +4,7 @@
   description: job-description-bridgeensign
   playTimeTracker: JobBridgeEnsign
   setPreference: true
+  setRankPreference: true
   supervisors: job-supervisors-bs
   requirements:
     - !type:DepartmentTimeRequirement

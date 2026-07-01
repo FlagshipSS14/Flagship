@@ -4,6 +4,7 @@
   description: job-description-executiveofficer
   playTimeTracker: JobExecutiveOfficer
   setPreference: true
+  setRankPreference: true
   supervisors: job-supervisors-co
   requireAdminNotify: true
   requirements:
