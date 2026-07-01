@@ -28,7 +28,7 @@
     head: ClothingHeadHatBeretArtillerySpecialist
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetArtillerySpecialist
-    jumpsuit: ClothingUniformJumpsuitArtillerySpecialist
+    jumpsuit: ClothingUniformJumpsuitSuppliesCrewman
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltUtilityFilled

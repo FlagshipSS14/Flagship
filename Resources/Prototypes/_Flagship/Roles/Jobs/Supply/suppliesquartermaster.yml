@@ -28,7 +28,7 @@
     id: QuartermasterPDA
     head: ClothingHeadHatBeretSuppliesQuartermaster
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetSuppliesQuartermaster
+    ears: ClothingHeadsetAltSupplies
     jumpsuit: ClothingUniformJumpsuitSuppliesCrewman
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSatchelLeather
