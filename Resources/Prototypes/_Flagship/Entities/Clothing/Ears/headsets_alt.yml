@@ -117,10 +117,40 @@
     sprite: _Flagship/Clothing/Ears/Headsets/bridgecommand.rsi
 
 # Military Police
+- type: entity
+  parent: ClothingHeadsetAltFlag
+  id: ClothingHeadsetAltMilitaryPolice
+  name: Military Police Chief's Headset
+  description: Headset used by Military Police Chiefs.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyTactical
+      - EncryptionKeyMilitaryPolice
+  - type: Sprite
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolice.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Ears/Headsets/militarypolice.rsi
 
 # Science
 
 # Supply
+- type: entity
+  parent: ClothingHeadsetAltFlag
+  id: ClothingHeadsetAltSupplies
+  name: Supplies Quartermaster over-ear headset
+  description: Headset used by Supplies Quartermasters.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySupplies
+      - EncryptionKeyTactical
+  - type: Sprite
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
 
 # Medical
 

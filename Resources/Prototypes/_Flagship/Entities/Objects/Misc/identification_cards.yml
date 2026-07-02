@@ -26,6 +26,7 @@
   - type: StealTarget
     stealGroup: IDCard
 
+# Bridge Command
 - type: entity
   parent: [IDCardFlagship, BaseGrandTheftContraband]
   id: CommandingOfficerIDCard
@@ -222,3 +223,103 @@
   - type: StealTarget
     stealGroup: CaptainIDCard
 
+# Military Police
+- type: entity
+  parent: [IDCardFlagship, BaseGrandTheftContraband]
+  id: MilitaryPoliceChiefIDCard
+  name: Military Police Chief's ID Card
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - state: stripe_top
+      color: "#580000"
+    - state: stripe_bottom
+      color: "#790000"
+    - sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: MPChief
+  - type: Item
+    heldPrefix: red
+  - type: PresetIdCard
+    job: MPChief
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+
+- type: entity
+  parent: [IDCardFlagship, BaseGrandTheftContraband]
+  id: MilitaryPoliceMedicIDCard
+  name: Military Police Medic's ID Card
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - state: stripe_top
+      color: "#580000"
+    - state: stripe_bottom
+      color: "#790000"
+    - sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: MPMedic
+  - type: Item
+    heldPrefix: red
+  - type: PresetIdCard
+    job: MPMedic
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+
+- type: entity
+  parent: [IDCardFlagship, BaseGrandTheftContraband]
+  id: MilitaryPoliceOfficerIDCard
+  name: Military Police Officer's ID Card
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - state: stripe_top
+      color: "#580000"
+    - state: stripe_bottom
+      color: "#790000"
+    - sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: MPOfficer
+  - type: Item
+    heldPrefix: red
+  - type: PresetIdCard
+    job: MPOfficer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+
+- type: entity
+  parent: [IDCardFlagship, BaseGrandTheftContraband]
+  id: MilitaryPoliceTraineeIDCard
+  name: Military Police Trainee's ID Card
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - state: stripe_top
+      color: "#580000"
+    - state: stripe_bottom
+      color: "#790000"
+    - sprite: /Textures/_Flagship/Interface/Misc/job_icons.rsi
+      offset: -0.09375, 0.0625
+      state: MPTrainee
+  - type: Item
+    heldPrefix: red
+  - type: PresetIdCard
+    job: MPTrainee
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard

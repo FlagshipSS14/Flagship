@@ -12,21 +12,20 @@
   - Medical
   - Maintenance
 
+# Flagship
+# PLEASE RESPECT THE EQUIPMENT ORDER OR I WILL STEAL YOUR NOSE
+# equipment: id, head, eyes, ears, mask, neck, outerClothing, jumpsuit, gloves, back, belt, shoes
 - type: startingGear
   id: FlagMedicalInternGear
   equipment:
-    shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
-    ears: ClothingHeadsetCommandingOfficer
-    pocket2: BookMedicalReferenceBook
-
-- type: chameleonOutfit
-  id: FlagMedicalInternChameleonOutfit
-  job: FlagMedicalIntern
-  equipment:
-    head: ClothingHeadHatBeretMedic
+    head: ClothingHeadHatMimesoft
     eyes: ClothingEyesHudMedical
+    ears: ClothingHeadsetMedical
     mask: ClothingMaskSterile
-    neck: ClothingNeckStethoscope
+    jumpsuit: ClothingUniformJumpsuitFlagMedicalDoctor
     outerClothing: ClothingOuterCoatLabOpened
-    gloves: ClothingHandsGlovesLatex
+    gloves: ClothingHandsGlovesNitrile
+    back: ClothingBackpackMedical
+    belt: ClothingBeltMedical
+    shoes: ClothingShoesColorWhite
