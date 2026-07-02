@@ -210,9 +210,9 @@
       - EncryptionKeySupplies
       - EncryptionKeyTactical
   - type: Sprite
-    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
   - type: Clothing
-    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
 
 - type: entity
   parent: ClothingHeadsetFlag
@@ -225,9 +225,9 @@
       key_slots:
       - EncryptionKeySupplies
   - type: Sprite
-    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
   - type: Clothing
-    sprite: _Flagship/Clothing/Ears/Headsets/supplies.rsi
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
 
 # Medical
 - type: entity
