@@ -136,6 +136,21 @@
 # Science
 
 # Supply
+- type: entity
+  parent: ClothingHeadsetAltFlag
+  id: ClothingHeadsetAltSupplies
+  name: Supplies Quartermaster over-ear headset
+  description: Headset used by Supplies Quartermasters.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySupplies
+      - EncryptionKeyTactical
+  - type: Sprite
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
+  - type: Clothing
+    sprite: _Flagship/Clothing/Ears/Headsets/supplycrew.rsi
 
 # Medical
 
