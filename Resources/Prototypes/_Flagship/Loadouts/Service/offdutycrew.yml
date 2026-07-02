@@ -1,0 +1,94 @@
+# Face
+- type: loadout
+  id: OffDutyCrewFace
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    mask: ClothingMaskGas
+
+# Jumpsuits
+# Grey
+- type: loadout
+  id: OffDutyCrewGreyJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+
+- type: loadout
+  id: OffDutyCrewGreyJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorGrey
+
+# Rainbow
+- type: loadout
+  id: OffDutyCrewRainbowJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    jumpsuit: ClothingUniformColorRainbow
+
+# Ancient
+- type: loadout
+  id: OffDutyCrewAncientJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+
+# Neck
+- type: loadout
+  id: OffDutyCrewMantle
+  equipment:
+    neck: ClothingNeckMantle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterGrey
+
+- type: startingGear
+  id: OffDutyCrewMantle
+  equipment:
+    neck: ClothingNeckMantle
+
+# Back
+- type: loadout
+  id: OffDutyCrewBackpack
+  equipment:
+    back: ClothingBackpack
+
+- type: loadout
+  id: OffDutyCrewSatchel
+  equipment:
+    back: ClothingBackpackSatchel
+
+- type: loadout
+  id: OffDutyCrewDuffel
+  equipment:
+    back: ClothingBackpackDuffel
+
+# Gloves
+- type: loadout
+  id: OffDutyCrewGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    gloves: ClothingHandsGlovesFingerlessInsulated
+
+# Outerclothing
+- type: loadout
+  id: OffDutyCrewWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCoat
+
+# Shoes
+- type: loadout
+  id: OffDutyCrewBlackShoes
+  equipment:
+    shoes: ClothingShoesColorBlack
+
+- type: loadout
+  id: OffDutyCrewWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinter

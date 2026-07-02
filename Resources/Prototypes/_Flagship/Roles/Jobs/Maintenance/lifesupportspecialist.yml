@@ -1,0 +1,26 @@
+- type: job
+  id: LifeSupportSpecialist
+  name: job-name-lifesupportspecialist
+  description: job-description-lifesupportspecialist
+  playTimeTracker: JobLifeSupportSpecialist
+  setPreference: true
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  displayWeight: 90
+  startingGear: LifeSupportSpecialistGear
+  icon: "JobIconLifeSupportSpecialist"
+  supervisors: job-supervisors-com
+  accessGroups:
+  - Command
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FirefighterDay
+    prototype: FireAxe
+
+- type: startingGear
+  id: LifeSupportSpecialistGear
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+    id: AtmosPDA
+    ears: ClothingHeadsetEngineering
